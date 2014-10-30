@@ -1,0 +1,23 @@
+How to bypass SSL validation for Exchange Webservices Managed API
+3 Feb 2009
+Tags: ews exchange c#
+
+Sevki
+@Sevki
+
+* OPC Sample Code
+This article is briefly describes how to setup a sample application that works with OPC clients.
+
+Turns out that at my first day at work I had to wrestle with this stuff.. because I was looking for exchange specific solution I failed… if it had occur to me to look for a WCF specific thing it would have saved me a ton of time…
+
+anyways here is what you need to do in your code declare these
+
+** Code
+
+.code how-to-bypass-ssl-validation-for-exchange-webservices-managed-api/ews.cs /START1 OMIT/,/END1 OMIT/
+
+put this before your code executes
+
+.code how-to-bypass-ssl-validation-for-exchange-webservices-managed-api/ews.cs /START2 OMIT/,/END2 OMIT/
+
+and you are good to go..

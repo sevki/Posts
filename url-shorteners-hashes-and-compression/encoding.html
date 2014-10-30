@@ -1,0 +1,128 @@
+<style>
+
+.encoding {
+//  width:100%;
+  text-align:center;
+  border-spacing: 0px;
+  font-family:Monospace;
+  size:8px;
+  border-collapse: collapse;
+}
+.encoding td {
+  padding:0px;
+}
+.first, .second, .third {
+  float:left;
+  border:solid red 2px;
+  padding:2px;
+}
+.first, .second {
+  margin-right: 27px;
+}
+.first {
+//  width: 256px;
+
+}
+.second {
+//  width: 192px;
+
+}
+.encoding {
+  border-right:dashed white 1px;
+  border-left:dashed white 1px;
+
+}
+.third {
+//  width: 128px;
+
+}
+.bytes, .bits {
+  width: 64px;
+}
+.base {
+  width:48px;
+}
+.bordered td{
+  border-right:dashed gray 1px;
+  border-left:dashed gray 1px;
+}
+.bordered td:last-child {
+  border-right:dashed white 1px;
+}
+.bordered td:first-child {
+  border-left:dashed white 1px;
+}
+</style>
+<div style="margin-left: auto; margin-right:auto;">
+  <div class="first">
+  <table class="encoding">
+    <tr class="bordered">
+      <td class="bytes">49</td>
+      <td class="bytes">6</td>
+      <td class="bytes">246</td>
+      <td class="bytes">118</td>
+    </tr>
+    <tr>
+      <td  class="bits">00110001</td>
+      <td  class="bits">00000110</td>
+      <td  class="bits">11110110</td>
+      <td  class="bits">01110110</td>
+    </tr>
+  </table>
+  <table class="encoding bordered">
+    <tr>
+        <td class="base">M</td>
+        <td class="base">Q</td>
+        <td class="base">b</td>
+        <td class="base">2</td>
+        <td class="base">d</td>
+        <td class="base">g</td>
+        <td class="base">=</td>
+        <td class="base">=</td>
+    </tr>
+  </table>
+  </div>
+  <div class="second">
+  <table class="encoding">
+    <tr class="bordered">
+      <td class="bytes">49</td>
+      <td class="bytes">6</td>
+      <td class="bytes">246</td>
+    </tr>
+    <tr>
+      <td  class="bits">00110001</td>
+      <td  class="bits">00000110</td>
+      <td  class="bits">11110110</td>
+    </tr>
+  </table>
+  <table class="encoding bordered">
+    <tr>
+        <td class="base">M</td>
+        <td class="base">Q</td>
+        <td class="base">b</td>
+        <td class="base">2</td>
+    </tr>
+  </table>
+  </div>
+  <div class="third">
+  <table class="encoding">
+    <tr class="bordered">
+      <td class="bytes">49</td>
+      <td class="bytes">6</td>
+    </tr>
+    <tr>
+      <td  class="bits">00110001</td>
+      <td  class="bits">00000110</td>
+    </tr>
+  </table>
+  <table class="encoding bordered">
+    <tr>
+        <td class="base">M</td>
+        <td class="base">Q</td>
+        <td class="base">Y</td>
+        <td class="base">=</td>
+    </tr>
+  </table>
+  </div>
+</div>
+<div style="clear:both;"></div>

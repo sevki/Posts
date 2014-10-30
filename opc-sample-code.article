@@ -1,0 +1,23 @@
+OPC Sample Code
+10 Oct 2013
+Tags: opc c#
+
+Sevki
+@Sevki
+
+* OPC Sample Code
+This article is briefly describes how to setup a sample application that works with OPC clients.
+
+** OPC
+My personal opinion is that OPC is a horrible platform and people resposible for it should be hunted down and killed alongside one direction.
+
+*** Setup
+.code opc-sample-code/setup.cs
+
+*** Datachange Event Handler
+.code opc-sample-code/dataevent.cs
+
+I get a lot of "where do I download this magic dll" type questions, just do a quick [[https://duckduckgo.com/?q=Interop.OPCAutomation.dll][`Interop.OPCAutomation.dll`]] search on ddg.
+
+*** Full sample app
+.code opc-sample-code/fullapp.cs
