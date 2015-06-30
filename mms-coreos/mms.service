@@ -1,0 +1,16 @@
+[Unit]
+Description=MongoAutomationAgent
+
+[Service]
+ExecStartPre=/usr/bin/wget {yourdomain}/local.config
+ExecStartPre=/usr/bin/wget -N -P {yourdomain}/mongodb-mms-automation-agent
+ExecStartPre=/usr/bin/chmod +x /opt/bin/mongodb-mms-automation-agent
+ExecStartPre=/usr/bin/mkdir -p /var/lib/mongodb-mms-automation
+ExecStartPre=/usr/bin/mkdir -p /var/log/mongodb-mms-automation
+ExecStartPre=/usr/bin/mkdir -p /data
+ExecStart=/opt/bin/mongodb-mms-automation-agent --config=local.config >> /var/log/mongodb-mms-automation/automation-agent.log 2>&1
+Restart=always
+RestartSec=10
+
+[X-Fleet]
+Global=true

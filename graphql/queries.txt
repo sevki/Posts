@@ -1,0 +1,166 @@
+// START1 OMIT
+{
+  user(id: 3500401) {
+    id,
+    name,
+    isViewerFriend,
+    profilePicture(size: 50)  {
+      uri,
+      width,
+      height
+    }
+  }
+}
+// END1 OMIT
+// START2 OMIT
+{
+  "user" : {
+    "id": 3500401,
+    "name": "Jing Chen",
+    "isViewerFriend": true,
+    "profilePicture": {
+      "uri": "http://someurl.cdn/pic.jpg",
+      "width": 50,
+      "height": 50
+    }
+  }
+}
+// END2 OMIT
+// START3 OMIT
+{
+  Products(ProductID: 3) {
+    ProductName,
+    UnitsInStock
+  }
+}
+// END3 OMIT
+// START4 OMIT
+select ProductName, UnitsInStock from Products where ProductID = 3;
+// END4 OMIT
+// START5 OMIT
+{
+  Products(ProductID: 3) {
+    ProductName,
+    UnitsInStock,
+    Categories() {
+       CategoryName
+    }
+  }
+}
+// END5 OMIT
+// START6 OMIT
+select ProductName, UnitsInStock from Products where ProductID = 3;
+select CategoryName from Categories ;
+// END6 OMIT
+// START7 OMIT
+{
+	"Categories": [
+		{
+			"CategoryName": "Beverages"
+		},
+		{
+			"CategoryName": "Condiments"
+		},
+		{
+			"CategoryName": "Confections"
+		},
+		{
+			"CategoryName": "Dairy Products"
+		},
+		{
+			"CategoryName": "Grains/Cereals"
+		},
+		{
+			"CategoryName": "Meat/Poultry"
+		},
+		{
+			"CategoryName": "Produce"
+		},
+		{
+			"CategoryName": "Seafood"
+		}
+	],
+	"CategoryID": 2,
+	"ProductName": "Aniseed Syrup",
+	"UnitsInStock": 13
+}
+// END7 OMIT
+// START8 OMIT
+{
+  Products(ProductID: 3) {
+    ProductName,
+    UnitsInStock,
+    CategoryId,
+    Categories(CategoryID: $CategoryID) {
+       CategoryName
+    }
+  }
+}
+// END8 OMIT
+// START9 OMIT
+select ProductName, UnitsInStock, CategoryId from Products where ProductID = 3;
+select CategoryName from Categories where CategoryID = 2;
+// END9 OMIT
+// START10 OMIT
+{
+	"Categories": {
+		"CategoryName": "Condiments"
+	},
+	"CategoryID": 2,
+	"ProductName": "Aniseed Syrup",
+	"UnitsInStock": 13
+}
+// END10 OMIT
+// START11 OMIT
+{
+  Products(ProductID: 11) {
+    ProductName,
+    UnitsInStock,
+    ProductID,
+    OrderDetails(ProductID: $ProductID) {
+       OrderID,
+       Orders(OrderID: $OrderID) {
+         EmployeeID,
+         Employees(EmployeeID: $EmployeeID) {
+            FirstName
+         }
+       }
+    }
+  }
+}
+// END11 OMIT
+// START12 OMIT
+{
+	"OrderDetails": [
+		{
+			"OrderID": 10420,
+			"Orders": {
+				"EmployeeID": 3,
+				"Employees": {
+					"FirstName": "Janet"
+				}
+			}
+		},
+		( omitted )
+		{
+			"OrderID": 10848,
+			"Orders": {
+				"EmployeeID": 7,
+				"Employees": {
+					"FirstName": "Robert"
+				}
+			}
+		}
+	],
+	"ProductID": 9,
+	"ProductName": "Mishi Kobe Niku",
+	"UnitsInStock": 29
+}
+// END12 OMIT
+// START13 OMIT
+select ProductName, UnitsInStock, ProductID from Products where ProductID = 9;
+select OrderID from OrderDetails where ProductID = 9;
+select EmployeeID from Orders where OrderID = 10420;
+select FirstName from Employees where EmployeeID = 2;
+( omitted )
+// END13 OMIT

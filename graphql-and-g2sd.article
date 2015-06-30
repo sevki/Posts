@@ -1,0 +1,142 @@
+GraphQL and g2sd
+24 Jun 2015
+Tags: golang graphql langs lexer parser facebook
+
+Sevki
+@Sevki
+
+* GraphQL
+This article is about my
+[[http://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html][GraphQL]] language
+[[https://sevki.org/graphql][implementation]] and how it's compiled
+to SQL with [[https://sevki.org/g2sd][g2sd]].
+
+** What is GraphQL?
+GraphQL is meant to be a replacement to rest, in the sense that
+instead of writing a query such as `/users/get/3500401` you'd write
+something like
+
+.code graphql/queries.txt /START1 OMIT/,/END1 OMIT/
+
+which would return something like;
+
+.code graphql/queries.txt /START2 OMIT/,/END2 OMIT/
+
+as opposed to dumping the entire table. How you get that data, process
+it and use what backends to store it is entirely up to you.
+
+However since GraphQL isn't yet ready for finalization and there are
+impatient people like me who have jumped the gun and interpreted what
+this would be by not reading the entire article and tried to infer
+what it is from the two code snippets that were published.
+
+What my implementation gives you is a graph, an abstract syntax tree
+to be more specific, what you do with it is entirely up to you.
+
+This isn't a complete implementation of GraphQL seeing at the moment
+of writing this it wasn't released. If you want to know more about the
+thing I highly recommend you check out
+
+- [[http://facebook.github.io/react/blog/2015/05/01/graphql-introduction.html][GraphQL Introduction]]
+- [[https://www.youtube.com/watch?v=9sc8Pyc51uU][React.js Conf 2015 - Data fetching for React applications at Facebook]]
+
+*** g2sd (Graph to SQL Daemon)
+
+GraphQL to SQL for instance takes in a GraphQL and prints it as SQL
+for instance
+
+.code graphql/queries.txt /START3 OMIT/,/END3 OMIT/
+
+and converts it to
+
+.code graphql/queries.txt /START4 OMIT/,/END4 OMIT/
+
+which is a better query language because it does look like what we
+will get back in JSON form, we've also gotten rid of the `select` and
+`where` clauses, but it's not a graph.
+
+Can we represent more complex data structures like this in SQL?
+
+.code graphql/queries.txt /START5 OMIT/,/END5 OMIT/
+
+for instance this query will be turned in to two queries. 
+
+.code graphql/queries.txt /START6 OMIT/,/END6 OMIT/
+
+since there are no params in the second query it will return all the
+categories in the DB. I'm sure someone will correct me on this because
+there is a esoteric way this can be achieved I'm not aware off (I'll be
+happy if you send me a pull request) but at this stage I'm not
+entirely concerned with writing good SQL queries.
+
+.code graphql/queries.txt /START7 OMIT/,/END7 OMIT/
+
+
+*** Enter variables.
+
+
+Clearly this is stupid, we won't be needing this all this, we'll be
+needing the one that carries the same `CategoryID` as our original
+query. `GraphQL` allows us to have `Variables` these are marked with
+`$`, in `g2sd` they are able to access their parent result set and use
+the parents result as a param so this
+
+.code graphql/queries.txt /START8 OMIT/,/END8 OMIT/
+
+becomes this
+
+.code graphql/queries.txt /START9 OMIT/,/END9 OMIT/
+
+and we get
+
+.code graphql/queries.txt /START10 OMIT/,/END10 OMIT/
+
+great, you say! You've done something that could have been done with a
+`join` and you did it with two queries and wasted all those
+cycles. You are  a jerk.
+
+First of all dear reader no need for name calling. Secondbly we are
+not finished. 
+
+How about we make this a bit more interesting?
+
+.code graphql/queries.txt /START11 OMIT/,/END11 OMIT/
+
+And We'll get something like
+
+.code graphql/queries.txt /START12 OMIT/,/END12 OMIT/
+
+Here is the SQL that gets us this result.
+
+.code graphql/queries.txt /START13 OMIT/,/END13 OMIT/
+
+*** Vision for g2sd
+
+So far what we have done is not amazing, and it is certainly not
+production ready. If you don't see the benefit of writing a
+declarative queries, how it can speed up your prototyping, or not
+needing to write any server-side glue code, it's still OK. Because I
+haven't talked about the vision yet. For that I'm going to borrow,
+most if not all the features of
+[[http://vitess.io/overview/#features][vitess]]. I want 
+
+- Query rewriting and sanitation – Add limits and avoid non-deterministic updates. 
+- Query blacklisting – Customize rules to prevent potentially problematic queries from hitting your database. 
+- Query killer – Terminate queries that take too long to return data.
+- Table ACLs – Specify access control lists (ACLs) for tables based on the connected user. 
+
+In addition to vitess I want to re-write most of the `GraphQL` to `SQL`
+bits so they make better use of existing SQL language features. If
+nothing else comes out of this, I've made a great prototyping
+tool for my self. And I'm happy with that.
+
+*** Vision for GraphQL (Go implementation)
+
+I think there is a happy place where GraphQL can live in the SOA
+world. Things like
+[[https://github.com/GoogleCloudPlatform/go-endpoints][CloudEndpoints]]
+and 
+[[http://gokit.io][go-kit]] use registration mechanisms for handlers,
+I am trying to figure out the best way to integrate this in to such a
+work flows. More on that later.
+b

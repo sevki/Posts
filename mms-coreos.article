@@ -1,0 +1,21 @@
+Mongodb Automation Agent with Fleet
+16 Feb 2015
+Tags: coreos mongodb mms fleet mms-agent fleetfile
+
+Sevki
+@Sevki
+
+* MMS+Coreos
+MMS+Coreos
+
+Configure the config file with the keys provided by mms, upload the binary
+and local.config somewhere your servers can reach. Configure the
+mms.service file with the address of where you uploaded those and
+simply  `fleetctl start mms.service`. All your machines that have
+fleet running should now appear in MMS console.
+
+** Config
+.code mms-coreos/local.config
+
+** Script
+.code mms-coreos/mms.service
