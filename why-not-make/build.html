@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="/why-not-make/static/d3.v3.min.js"></script>
+<script src="/why-not-make/static/crc32.js"></script>
+<script src="/why-not-make/static/sha.js"></script>
+<script src="/why-not-make/static/react.js"></script>
+<script src="/why-not-make/static/JSXTransformer.js"></script>
+<script src="/why-not-make/static/lodash.js"></script>
+<style>
+
+path.link {
+  fill: none;
+  //  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+circle {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+text {
+  text-shadow:
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+  font: 14px monospace;
+  font-weight: bold;
+  pointer-events: none;
+  letter-spacing: 1px;
+}
+.info-pane {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #ffffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+}
+</style>
+<body>
+  <script>
+
+
+  </script>
+
+  <div id="example"></div>
+  <script src="/why-not-make/static/graphs.jsx" type="text/jsx"></script>
+  <script src="/why-not-make/static/dep-graph.jsx" type="text/jsx"></script>
+  <script src="/why-not-make/static/build-graph.jsx" type="text/jsx"></script>
+
+  <script type="text/jsx">
+  React.render(
+    <Graphs />,
+    document.getElementById('example')
+  );
+  </script>
+
+</body>
+</html>

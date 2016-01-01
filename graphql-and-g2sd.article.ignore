@@ -1,0 +1,59 @@
+g2sd conventions
+24 Jun 2015
+Tags: golang graphql langs lexer parser facebook
+
+Sevki
+@Sevki
+
+* About how g2sd queries
+This is about g2sd queries, how they should be optimized and what
+smart things it will do.
+
+** What is g2sd?
+
+g2sd stands for (G)raphQL 2 (S)QL (D)aemon. It is a server that
+implements converts GraphQL to SQL and executes it. It is not strictly
+a GraphQL server, it just understands the language and knows how to
+convert it to SQL for execution. For instance `$variables` are 
+handled client-side in the fb implentation to precompile, but g2sd
+knows how to handle variables serverside. While that isn't incorrect
+syntax, it is not strictly speaking GraphQL.
+
+*** Execution
+
+g2sd threats each call as a `select` unless it's called `insert`,
+`delete` or `update`.  The name of the call becomes the `from` clause
+in `select`. For instance this call;
+
+.code g2sd-conventions/queries.txt /START1 OMIT/,/END1 OMIT/
+
+will become these
+
+.code g2sd-conventions/queries.txt /START2 OMIT/,/END2 OMIT/
+
+We will execute these in order, like with other. It may be usefull to
+think of every indentation as a new call in the stack as they
+most likely will be.
+
+When using `$foo` type variables, we will check the parent node in the
+stack. It should be noted that the parent checking is not a recursive
+operation, a calls heap is limited to it's parent's returned values.
+
+*** Table names and limits
+
+- Table names should be lowercase and [[https://en.wikipedia.org/wiki/Data_element_name][plural]].
+- Column names should be [[https://en.wikipedia.org/wiki/Data_element_name][singular]].
+- Column names should not contain name of the table unless it's a foreign key. 
+
+These things should be looked out for when designing a DB along with
+all the other normalization techniques. 
+
+When g2sd gets a call with a singular name it will set its `limit` to
+`1` if it gets a plural name it will set its `limit` to `100`,
+singularize the name of the table and then build the query.
+
+*** JOIN
+
+If the the call that is being executed is a `singular` name, g2sd will
+scan for all the other child singular queries and attempt to flatten
+the query. 

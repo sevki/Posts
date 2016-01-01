@@ -1,0 +1,3434 @@
+{
+	"Target": {
+		"Name": "harvey",
+		"Sources": null,
+		"Dependencies": [
+			"//sys/src:all"
+		],
+		"Includes": null,
+		"Headers": null,
+		"CompilerFlags": null,
+		"LinkerFlags": null,
+		"Source": "/Users/sevki/Code/harvey",
+		"Out": null
+	},
+	"Edges": {
+		"harvey:all": {
+			"Target": {
+				"Name": "all",
+				"Sources": null,
+				"Dependencies": [
+					"klibs",
+					"libs",
+					"//sys/src/cmd:kcmds",
+					"//sys/src/cmd:cmds",
+					"//sys/src/9/k10:k8cpu"
+				],
+				"Includes": null,
+				"Headers": null,
+				"CompilerFlags": null,
+				"LinkerFlags": null,
+				"Source": "/Users/sevki/Code/harvey/sys/src",
+				"Out": null
+			},
+			"Edges": {
+				"all:cmds": {
+					"Target": {
+						"Name": "cmds",
+						"Sources": null,
+						"Dependencies": [
+							"//sys/src/cmd/9660srv:9660srv",
+							"//sys/src/cmd/9nfs:9nfs",
+							"//sys/src/cmd/astro:astro",
+							"//sys/src/cmd/auth:auth",
+							"//sys/src/cmd/aux:aux",
+							"//sys/src/cmd/bzip2:bzip2",
+							"//sys/src/cmd/cb:cb",
+							"//sys/src/cmd/cdfs:cdfs",
+							"//sys/src/cmd/cifs:cifs",
+							"//sys/src/cmd/con:con",
+							"//sys/src/cmd/dial:dial",
+							"//sys/src/cmd/diff:diff",
+							"//sys/src/cmd/disk:disk",
+							"//sys/src/cmd/dossrv:dossrv",
+							"//sys/src/cmd/exportfs:exportfs",
+							"//sys/src/cmd/fossil:fossil",
+							"//sys/src/cmd/ip:ip",
+							"//sys/src/cmd/hoc:hoc",
+							"//sys/src/cmd/grep:grep"
+						],
+						"Includes": null,
+						"Headers": null,
+						"CompilerFlags": null,
+						"LinkerFlags": null,
+						"Source": "/Users/sevki/Code/harvey/sys/src/cmd",
+						"Out": null
+					},
+					"Edges": {
+						"cmds:9660srv": {
+							"Target": {
+								"Name": "9660srv",
+								"Sources": [
+									"sys/src/cmd/9660srv/9660srv.c",
+									"sys/src/cmd/9660srv/data.c",
+									"sys/src/cmd/9660srv/iobuf.c",
+									"sys/src/cmd/9660srv/main.c",
+									"sys/src/cmd/9660srv/xfile.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/9660srv",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:9nfs": {
+							"Target": {
+								"Name": "9nfs",
+								"Sources": [
+									"sys/src/cmd/9nfs/9p.c",
+									"sys/src/cmd/9nfs/auth.c",
+									"sys/src/cmd/9nfs/authhostowner.c",
+									"sys/src/cmd/9nfs/nfs.c",
+									"sys/src/cmd/9nfs/nfsmount.c",
+									"sys/src/cmd/9nfs/nfsserver.c",
+									"sys/src/cmd/9nfs/xfile.c",
+									"sys/src/cmd/9nfs/chat.c",
+									"sys/src/cmd/9nfs/rpc.c",
+									"sys/src/cmd/9nfs/string.c",
+									"sys/src/cmd/9nfs/strparse.c",
+									"sys/src/cmd/9nfs/system.c",
+									"sys/src/cmd/9nfs/listalloc.c",
+									"sys/src/cmd/9nfs/server.c",
+									"sys/src/cmd/9nfs/unixnames.c"
+								],
+								"Dependencies": [
+									"portmapper",
+									"pcnfsd"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/9nfs",
+								"Out": null
+							},
+							"Edges": {
+								"9nfs:pcnfsd": {
+									"Target": {
+										"Name": "pcnfsd",
+										"Sources": [
+											"sys/src/cmd/9nfs/pcnfsd.c",
+											"sys/src/cmd/9nfs/unixnames.c",
+											"sys/src/cmd/9nfs/chat.c",
+											"sys/src/cmd/9nfs/rpc.c",
+											"sys/src/cmd/9nfs/server.c",
+											"sys/src/cmd/9nfs/string.c",
+											"sys/src/cmd/9nfs/listalloc.c",
+											"sys/src/cmd/9nfs/strparse.c",
+											"sys/src/cmd/9nfs/system.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/9nfs",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"9nfs:portmapper": {
+									"Target": {
+										"Name": "portmapper",
+										"Sources": [
+											"sys/src/cmd/9nfs/portmapper.c",
+											"sys/src/cmd/9nfs/rpc.c",
+											"sys/src/cmd/9nfs/chat.c",
+											"sys/src/cmd/9nfs/server.c",
+											"sys/src/cmd/9nfs/string.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/9nfs",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:astro": {
+							"Target": {
+								"Name": "astro",
+								"Sources": [
+									"sys/src/cmd/astro/comet.c",
+									"sys/src/cmd/astro/cosadd.c",
+									"sys/src/cmd/astro/dist.c",
+									"sys/src/cmd/astro/geo.c",
+									"sys/src/cmd/astro/helio.c",
+									"sys/src/cmd/astro/init.c",
+									"sys/src/cmd/astro/jup.c",
+									"sys/src/cmd/astro/main.c",
+									"sys/src/cmd/astro/mars.c",
+									"sys/src/cmd/astro/merc.c",
+									"sys/src/cmd/astro/merct.c",
+									"sys/src/cmd/astro/moon.c",
+									"sys/src/cmd/astro/moont.c",
+									"sys/src/cmd/astro/nept.c",
+									"sys/src/cmd/astro/nutate.c",
+									"sys/src/cmd/astro/nutt.c",
+									"sys/src/cmd/astro/occ.c",
+									"sys/src/cmd/astro/output.c",
+									"sys/src/cmd/astro/pdate.c",
+									"sys/src/cmd/astro/plut.c",
+									"sys/src/cmd/astro/sat.c",
+									"sys/src/cmd/astro/satel.c",
+									"sys/src/cmd/astro/search.c",
+									"sys/src/cmd/astro/star.c",
+									"sys/src/cmd/astro/stars.c",
+									"sys/src/cmd/astro/sun.c",
+									"sys/src/cmd/astro/sunt.c",
+									"sys/src/cmd/astro/uran.c",
+									"sys/src/cmd/astro/venus.c",
+									"sys/src/cmd/astro/venust.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/astro",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:auth": {
+							"Target": {
+								"Name": "auth",
+								"Sources": null,
+								"Dependencies": [
+									"//sys/src/cmd/auth/factotum:factotum",
+									"//sys/src/cmd/auth/secstore:secstore",
+									"//sys/src/cmd/auth/lib:libauthcmd",
+									"authsrv",
+									"dsa2pub",
+									"dsa2ssh",
+									"guard.srv",
+									"rsa2csr",
+									"rsa2pub",
+									"rsa2ssh",
+									"rsa2x509",
+									"rsafill"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": [
+									"lib/libauthcmd.a"
+								],
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+								"Out": null
+							},
+							"Edges": {
+								"auth:authsrv": {
+									"Target": {
+										"Name": "authsrv",
+										"Sources": [
+											"sys/src/cmd/auth/authsrv.c",
+											"sys/src/cmd/auth/secureidcheck.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:dsa2pub": {
+									"Target": {
+										"Name": "dsa2pub",
+										"Sources": [
+											"sys/src/cmd/auth/dsa2pub.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:dsa2ssh": {
+									"Target": {
+										"Name": "dsa2ssh",
+										"Sources": [
+											"sys/src/cmd/auth/dsa2ssh.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:factotum": {
+									"Target": {
+										"Name": "factotum",
+										"Sources": [
+											"sys/src/cmd/auth/factotum/apop.c",
+											"sys/src/cmd/auth/factotum/chap.c",
+											"sys/src/cmd/auth/factotum/confirm.c",
+											"sys/src/cmd/auth/factotum/fs.c",
+											"sys/src/cmd/auth/factotum/httpdigest.c",
+											"sys/src/cmd/auth/factotum/log.c",
+											"sys/src/cmd/auth/factotum/p9any.c",
+											"sys/src/cmd/auth/factotum/p9cr.c",
+											"sys/src/cmd/auth/factotum/p9sk1.c",
+											"sys/src/cmd/auth/factotum/pass.c",
+											"sys/src/cmd/auth/factotum/rpc.c",
+											"sys/src/cmd/auth/factotum/rsa.c",
+											"sys/src/cmd/auth/factotum/secstore.c",
+											"sys/src/cmd/auth/factotum/util.c",
+											"sys/src/cmd/auth/factotum/wep.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/factotum",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:guard.srv": {
+									"Target": {
+										"Name": "guard.srv",
+										"Sources": [
+											"sys/src/cmd/auth/guard.srv.c",
+											"sys/src/cmd/auth/secureidcheck.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:libauthcmd": {
+									"Target": {
+										"Name": "libauthcmd",
+										"Sources": [
+											"sys/src/cmd/auth/lib/keyfmt.c",
+											"sys/src/cmd/auth/lib/netcheck.c",
+											"sys/src/cmd/auth/lib/okpasswd.c",
+											"sys/src/cmd/auth/lib/readwrite.c",
+											"sys/src/cmd/auth/lib/readarg.c",
+											"sys/src/cmd/auth/lib/readln.c",
+											"sys/src/cmd/auth/lib/getauthkey.c",
+											"sys/src/cmd/auth/lib/log.c",
+											"sys/src/cmd/auth/lib/error.c",
+											"sys/src/cmd/auth/lib/fs.c",
+											"sys/src/cmd/auth/lib/rdbio.c",
+											"sys/src/cmd/auth/lib/querybio.c",
+											"sys/src/cmd/auth/lib/wrbio.c",
+											"sys/src/cmd/auth/lib/getexpiration.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": [
+											"I../"
+										],
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/lib",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:rsa2csr": {
+									"Target": {
+										"Name": "rsa2csr",
+										"Sources": [
+											"sys/src/cmd/auth/rsa2csr.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:rsa2pub": {
+									"Target": {
+										"Name": "rsa2pub",
+										"Sources": [
+											"sys/src/cmd/auth/rsa2pub.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:rsa2ssh": {
+									"Target": {
+										"Name": "rsa2ssh",
+										"Sources": [
+											"sys/src/cmd/auth/rsa2ssh.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:rsa2x509": {
+									"Target": {
+										"Name": "rsa2x509",
+										"Sources": [
+											"sys/src/cmd/auth/rsa2x509.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:rsafill": {
+									"Target": {
+										"Name": "rsafill",
+										"Sources": [
+											"sys/src/cmd/auth/rsafill.c",
+											"sys/src/cmd/auth/rsa2any.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"lib/libauthcmd.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"auth:secstore": {
+									"Target": {
+										"Name": "secstore",
+										"Sources": [
+											"sys/src/cmd/auth/secstore/pak.c",
+											"sys/src/cmd/auth/secstore/password.c",
+											"sys/src/cmd/auth/secstore/secstore.c",
+											"sys/src/cmd/auth/secstore/SConn.c",
+											"sys/src/cmd/auth/secstore/util.c"
+										],
+										"Dependencies": [
+											"aescbc",
+											"secstored",
+											"secuser"
+										],
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/secstore",
+										"Out": null
+									},
+									"Edges": {
+										"secstore:aescbc": {
+											"Target": {
+												"Name": "aescbc",
+												"Sources": [
+													"sys/src/cmd/auth/secstore/aescbc.c",
+													"sys/src/cmd/auth/secstore/util.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/secstore",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										},
+										"secstore:secstored": {
+											"Target": {
+												"Name": "secstored",
+												"Sources": [
+													"sys/src/cmd/auth/secstore/dirls.c",
+													"sys/src/cmd/auth/secstore/pak.c",
+													"sys/src/cmd/auth/secstore/password.c",
+													"sys/src/cmd/auth/secstore/SConn.c",
+													"sys/src/cmd/auth/secstore/secstored.c",
+													"sys/src/cmd/auth/secureidcheck.c",
+													"sys/src/cmd/auth/secstore/util.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/secstore",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										},
+										"secstore:secuser": {
+											"Target": {
+												"Name": "secuser",
+												"Sources": [
+													"sys/src/cmd/auth/secstore/pak.c",
+													"sys/src/cmd/auth/secstore/password.c",
+													"sys/src/cmd/auth/secstore/SConn.c",
+													"sys/src/cmd/auth/secstore/secuser.c",
+													"sys/src/cmd/auth/secstore/util.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/auth/secstore",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										}
+									},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:aux": {
+							"Target": {
+								"Name": "aux",
+								"Sources": null,
+								"Dependencies": [
+									"//sys/src/cmd/aux/mnihongo:mnihongo",
+									"//sys/src/cmd/aux/flashfs:flashfs",
+									"//sys/src/cmd/aux/gps:gps",
+									"//sys/src/cmd/aux/vga:vga"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux",
+								"Out": null
+							},
+							"Edges": {
+								"aux:flashfs": {
+									"Target": {
+										"Name": "flashfs",
+										"Sources": null,
+										"Dependencies": [
+											"mkflashfs",
+											"testldfs",
+											"dummyfs",
+											"flashfsbin"
+										],
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/flashfs",
+										"Out": null
+									},
+									"Edges": {
+										"flashfs:dummyfs": {
+											"Target": {
+												"Name": "dummyfs",
+												"Sources": [
+													"sys/src/cmd/aux/flashfs/dummy.c",
+													"sys/src/cmd/aux/flashfs/dreq.c",
+													"sys/src/cmd/aux/flashfs/entry.c",
+													"sys/src/cmd/aux/flashfs/errors.c",
+													"sys/src/cmd/aux/flashfs/devfs.c",
+													"sys/src/cmd/aux/flashfs/utils.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/flashfs",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										},
+										"flashfs:flashfsbin": {
+											"Target": {
+												"Name": "flashfsbin",
+												"Sources": [
+													"sys/src/cmd/aux/flashfs/flash.c",
+													"sys/src/cmd/aux/flashfs/journal.c",
+													"sys/src/cmd/aux/flashfs/entry.c",
+													"sys/src/cmd/aux/flashfs/errors.c",
+													"sys/src/cmd/aux/flashfs/request.c",
+													"sys/src/cmd/aux/flashfs/devfs.c",
+													"sys/src/cmd/aux/flashfs/conv.c",
+													"sys/src/cmd/aux/flashfs/utils.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/flashfs",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										},
+										"flashfs:mkflashfs": {
+											"Target": {
+												"Name": "mkflashfs",
+												"Sources": [
+													"sys/src/cmd/aux/flashfs/mkfs.c",
+													"sys/src/cmd/aux/flashfs/devfs.c",
+													"sys/src/cmd/aux/flashfs/utils.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/flashfs",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										},
+										"flashfs:testldfs": {
+											"Target": {
+												"Name": "testldfs",
+												"Sources": [
+													"sys/src/cmd/aux/flashfs/testld.c",
+													"sys/src/cmd/aux/flashfs/journal.c",
+													"sys/src/cmd/aux/flashfs/entry.c",
+													"sys/src/cmd/aux/flashfs/errors.c",
+													"sys/src/cmd/aux/flashfs/devfs.c",
+													"sys/src/cmd/aux/flashfs/conv.c",
+													"sys/src/cmd/aux/flashfs/utils.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/flashfs",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										}
+									},
+									"Built": true,
+									"Output": ""
+								},
+								"aux:gps": {
+									"Target": {
+										"Name": "gps",
+										"Sources": [
+											"sys/src/cmd/aux/gps/util.c",
+											"sys/src/cmd/aux/gps/gpsfs.c"
+										],
+										"Dependencies": [
+											"gpsevermore"
+										],
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/gps",
+										"Out": null
+									},
+									"Edges": {
+										"gps:gpsevermore": {
+											"Target": {
+												"Name": "gpsevermore",
+												"Sources": [
+													"sys/src/cmd/aux/gps/util.c",
+													"sys/src/cmd/aux/gps/gpsevermore.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/gps",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										}
+									},
+									"Built": true,
+									"Output": ""
+								},
+								"aux:mnihongo": {
+									"Target": {
+										"Name": "mnihongo",
+										"Sources": [
+											"sys/src/cmd/aux/mnihongo/mnihongo.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/mnihongo",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"aux:vga": {
+									"Target": {
+										"Name": "vga",
+										"Sources": [
+											"sys/src/cmd/aux/vga/error.c",
+											"sys/src/cmd/aux/vga/ics534x.c",
+											"sys/src/cmd/aux/vga/radeon.c",
+											"sys/src/cmd/aux/vga/s3928.c",
+											"sys/src/cmd/aux/vga/sc15025.c",
+											"sys/src/cmd/aux/vga/trio64.c",
+											"sys/src/cmd/aux/vga/tvp3026.c",
+											"sys/src/cmd/aux/vga/vga.c",
+											"sys/src/cmd/aux/vga/vision968.c",
+											"sys/src/cmd/aux/vga/ch9294.c",
+											"sys/src/cmd/aux/vga/io.c",
+											"sys/src/cmd/aux/vga/main.c",
+											"sys/src/cmd/aux/vga/nvidia.c",
+											"sys/src/cmd/aux/vga/rgb524.c",
+											"sys/src/cmd/aux/vga/s3clock.c",
+											"sys/src/cmd/aux/vga/stg1702.c",
+											"sys/src/cmd/aux/vga/tvp3020.c",
+											"sys/src/cmd/aux/vga/tvp3026clock.c",
+											"sys/src/cmd/aux/vga/virge.c",
+											"sys/src/cmd/aux/vga/vmware.c",
+											"sys/src/cmd/aux/vga/clgd542x.c",
+											"sys/src/cmd/aux/vga/data.c",
+											"sys/src/cmd/aux/vga/icd2061a.c",
+											"sys/src/cmd/aux/vga/palette.c",
+											"sys/src/cmd/aux/vga/rgb524mn.c",
+											"sys/src/cmd/aux/vga/s3generic.c",
+											"sys/src/cmd/aux/vga/t2r4.c",
+											"sys/src/cmd/aux/vga/tvp3025.c",
+											"sys/src/cmd/aux/vga/vesa.c",
+											"sys/src/cmd/aux/vga/vision864.c",
+											"sys/src/cmd/aux/vga/clgd546x.c",
+											"sys/src/cmd/aux/vga/db.c",
+											"sys/src/cmd/aux/vga/ics2494.c",
+											"sys/src/cmd/aux/vga/pci.c",
+											"sys/src/cmd/aux/vga/s3801.c",
+											"sys/src/cmd/aux/vga/s3hwgc.c",
+											"sys/src/cmd/aux/vga/template.c",
+											"sys/src/cmd/aux/vga/tvp3025clock.c",
+											"sys/src/cmd/aux/vga/vesadb.c",
+											"sys/src/cmd/aux/vga/vision964.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/aux/vga",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:bzip2": {
+							"Target": {
+								"Name": "bzip2",
+								"Sources": null,
+								"Dependencies": [
+									"//sys/src/cmd/bzip2/lib:libbzip2"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": [
+									"DPLAN9"
+								],
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/bzip2",
+								"Out": null
+							},
+							"Edges": {
+								"bzip2:libbzip2": {
+									"Target": {
+										"Name": "libbzip2",
+										"Sources": [
+											"sys/src/cmd/bzip2/lib/blocksort.c",
+											"sys/src/cmd/bzip2/lib/bzassert.c",
+											"sys/src/cmd/bzip2/lib/bzcompress.c",
+											"sys/src/cmd/bzip2/lib/bzdecompress.c",
+											"sys/src/cmd/bzip2/lib/bzfeof.c",
+											"sys/src/cmd/bzip2/lib/bzlib.c",
+											"sys/src/cmd/bzip2/lib/bzread.c",
+											"sys/src/cmd/bzip2/lib/bzversion.c",
+											"sys/src/cmd/bzip2/lib/bzwrite.c",
+											"sys/src/cmd/bzip2/lib/bzzlib.c",
+											"sys/src/cmd/bzip2/lib/compress.c",
+											"sys/src/cmd/bzip2/lib/crctable.c",
+											"sys/src/cmd/bzip2/lib/decompress.c",
+											"sys/src/cmd/bzip2/lib/huffman.c",
+											"sys/src/cmd/bzip2/lib/randtable.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": [
+											"DPLAN9"
+										],
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/bzip2/lib",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:cb": {
+							"Target": {
+								"Name": "cb",
+								"Sources": [
+									"sys/src/cmd/cb/cb.c",
+									"sys/src/cmd/cb/cbtype.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/cb",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:cdfs": {
+							"Target": {
+								"Name": "cdfs",
+								"Sources": [
+									"sys/src/cmd/cdfs/buf.c",
+									"sys/src/cmd/cdfs/main.c",
+									"sys/src/cmd/cdfs/mmc.c",
+									"sys/src/cmd/cdfs/scsi.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/cdfs",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:cifs": {
+							"Target": {
+								"Name": "cifs",
+								"Sources": [
+									"sys/src/cmd/cifs/main.c",
+									"sys/src/cmd/cifs/transnt.c",
+									"sys/src/cmd/cifs/trans2.c",
+									"sys/src/cmd/cifs/trans.c",
+									"sys/src/cmd/cifs/cifs.c",
+									"sys/src/cmd/cifs/netbios.c",
+									"sys/src/cmd/cifs/pack.c",
+									"sys/src/cmd/cifs/info.c",
+									"sys/src/cmd/cifs/fs.c",
+									"sys/src/cmd/cifs/sid2name.c",
+									"sys/src/cmd/cifs/misc.c",
+									"sys/src/cmd/cifs/nterrstr.c",
+									"sys/src/cmd/cifs/doserrstr.c",
+									"sys/src/cmd/cifs/raperrstr.c",
+									"sys/src/cmd/cifs/auth.c",
+									"sys/src/cmd/cifs/dfs.c",
+									"sys/src/cmd/cifs/ping.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/cifs",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:con": {
+							"Target": {
+								"Name": "con",
+								"Sources": null,
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/con",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:dial": {
+							"Target": {
+								"Name": "dial",
+								"Sources": null,
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/dial",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:diff": {
+							"Target": {
+								"Name": "diff",
+								"Sources": [
+									"sys/src/cmd/diff/diffdir.c",
+									"sys/src/cmd/diff/diffio.c",
+									"sys/src/cmd/diff/diffreg.c",
+									"sys/src/cmd/diff/main.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/diff",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:disk": {
+							"Target": {
+								"Name": "disk",
+								"Sources": null,
+								"Dependencies": [
+									"//sys/src/cmd/disk/9660:9660",
+									"//sys/src/cmd/disk/prep:fdisk",
+									"//sys/src/cmd/disk/prep:prep"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/disk",
+								"Out": null
+							},
+							"Edges": {
+								"disk:9660": {
+									"Target": {
+										"Name": "9660",
+										"Sources": [
+											"sys/src/cmd/disk/9660/boot.c",
+											"sys/src/cmd/disk/9660/cdrdwr.c",
+											"sys/src/cmd/disk/9660/conform.c",
+											"sys/src/cmd/disk/9660/direc.c",
+											"sys/src/cmd/disk/9660/dump.c",
+											"sys/src/cmd/disk/9660/dump9660.c",
+											"sys/src/cmd/disk/9660/ichar.c",
+											"sys/src/cmd/disk/9660/jchar.c",
+											"sys/src/cmd/disk/9660/path.c",
+											"sys/src/cmd/disk/9660/plan9.c",
+											"sys/src/cmd/disk/9660/rune.c",
+											"sys/src/cmd/disk/9660/sysuse.c",
+											"sys/src/cmd/disk/9660/util.c",
+											"sys/src/cmd/disk/9660/write.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/disk/9660",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"disk:fdisk": {
+									"Target": {
+										"Name": "fdisk",
+										"Sources": [
+											"sys/src/cmd/disk/prep/fdisk.c",
+											"sys/src/cmd/disk/prep/edit.c",
+											"sys/src/cmd/disk/prep/y.tab.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/disk/prep",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"disk:prep": {
+									"Target": {
+										"Name": "prep",
+										"Sources": [
+											"sys/src/cmd/disk/prep/prep.c",
+											"sys/src/cmd/disk/prep/edit.c",
+											"sys/src/cmd/disk/prep/y.tab.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/disk/prep",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:dossrv": {
+							"Target": {
+								"Name": "dossrv",
+								"Sources": [
+									"sys/src/cmd/dossrv/xfssrv.c",
+									"sys/src/cmd/dossrv/xfile.c",
+									"sys/src/cmd/dossrv/dosfs.c",
+									"sys/src/cmd/dossrv/dossubs.c",
+									"sys/src/cmd/dossrv/iotrack.c",
+									"sys/src/cmd/dossrv/lock.c",
+									"sys/src/cmd/dossrv/chat.c",
+									"sys/src/cmd/dossrv/devio.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/dossrv",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:exportfs": {
+							"Target": {
+								"Name": "exportfs",
+								"Sources": [
+									"sys/src/cmd/exportfs/exportfs.c",
+									"sys/src/cmd/exportfs/exportsrv.c",
+									"sys/src/cmd/exportfs/pattern.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/exportfs",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:grep": {
+							"Target": {
+								"Name": "grep",
+								"Sources": [
+									"sys/src/cmd/grep/comp.c",
+									"sys/src/cmd/grep/main.c",
+									"sys/src/cmd/grep/sub.c",
+									"sys/src/cmd/grep/y.tab.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/grep",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:hoc": {
+							"Target": {
+								"Name": "hoc",
+								"Sources": [
+									"sys/src/cmd/hoc/code.c",
+									"sys/src/cmd/hoc/init.c",
+									"sys/src/cmd/hoc/math.c",
+									"sys/src/cmd/hoc/symbol.c",
+									"sys/src/cmd/hoc/y.tab.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/hoc",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"cmds:ip": {
+							"Target": {
+								"Name": "ip",
+								"Sources": null,
+								"Dependencies": [
+									"ftpd",
+									"//sys/src/cmd/ip/dhcpd:dhcpd",
+									"//sys/src/cmd/ip/dhcpd:dhcpleases",
+									"//sys/src/cmd/ip/ftpfs:ftpfs",
+									"//sys/src/cmd/ip/httpd:httpd",
+									"//sys/src/cmd/ip/imap4d:imap4d",
+									"//sys/src/cmd/ip/ipconfig:ipconfig",
+									"//sys/src/cmd/ip/ppp:ppp"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip",
+								"Out": null
+							},
+							"Edges": {
+								"ip:dhcpd": {
+									"Target": {
+										"Name": "dhcpd",
+										"Sources": [
+											"sys/src/cmd/ip/dhcpd/dhcpd.c",
+											"sys/src/cmd/ip/dhcpd/db.c",
+											"sys/src/cmd/ip/dhcpd/ndb.c",
+											"sys/src/cmd/ip/dhcpd/ping.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/dhcpd",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:dhcpleases": {
+									"Target": {
+										"Name": "dhcpleases",
+										"Sources": [
+											"sys/src/cmd/ip/dhcpd/dhcpleases.c",
+											"sys/src/cmd/ip/dhcpd/db.c",
+											"sys/src/cmd/ip/dhcpd/ping.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/dhcpd",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:ftpd": {
+									"Target": {
+										"Name": "ftpd",
+										"Sources": [
+											"sys/src/cmd/ip/ftpd.c",
+											"sys/src/cmd/ip/glob.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:ftpfs": {
+									"Target": {
+										"Name": "ftpfs",
+										"Sources": [
+											"sys/src/cmd/ip/ftpfs/ftpfs.c",
+											"sys/src/cmd/ip/ftpfs/proto.c",
+											"sys/src/cmd/ip/ftpfs/file.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/ftpfs",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:httpd": {
+									"Target": {
+										"Name": "httpd",
+										"Sources": null,
+										"Dependencies": [
+											"libhttps"
+										],
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": [
+											"libhttps.a"
+										],
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/httpd",
+										"Out": null
+									},
+									"Edges": {
+										"httpd:libhttps": {
+											"Target": {
+												"Name": "libhttps",
+												"Sources": [
+													"sys/src/cmd/ip/httpd/anonymous.c",
+													"sys/src/cmd/ip/httpd/content.c",
+													"sys/src/cmd/ip/httpd/emem.c",
+													"sys/src/cmd/ip/httpd/hints.c",
+													"sys/src/cmd/ip/httpd/init.c",
+													"sys/src/cmd/ip/httpd/log.c",
+													"sys/src/cmd/ip/httpd/redirect.c",
+													"sys/src/cmd/ip/httpd/sendfd.c",
+													"sys/src/cmd/ip/httpd/authorize.c"
+												],
+												"Dependencies": null,
+												"Includes": null,
+												"Headers": null,
+												"CompilerFlags": null,
+												"LinkerFlags": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/httpd",
+												"Out": null
+											},
+											"Edges": {},
+											"Built": true,
+											"Output": ""
+										}
+									},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:imap4d": {
+									"Target": {
+										"Name": "imap4d",
+										"Sources": [
+											"sys/src/cmd/ip/imap4d/auth.c",
+											"sys/src/cmd/ip/imap4d/copy.c",
+											"sys/src/cmd/ip/imap4d/csquery.c",
+											"sys/src/cmd/ip/imap4d/date.c",
+											"sys/src/cmd/ip/imap4d/fetch.c",
+											"sys/src/cmd/ip/imap4d/imap4d.c",
+											"sys/src/cmd/ip/imap4d/list.c",
+											"sys/src/cmd/ip/imap4d/mbox.c",
+											"sys/src/cmd/ip/imap4d/msg.c",
+											"sys/src/cmd/ip/imap4d/mutf7.c",
+											"sys/src/cmd/ip/imap4d/nodes.c",
+											"sys/src/cmd/ip/imap4d/folder.c",
+											"sys/src/cmd/ip/imap4d/search.c",
+											"sys/src/cmd/ip/imap4d/store.c",
+											"sys/src/cmd/ip/imap4d/utils.c",
+											"sys/src/cmd/ip/imap4d/debug.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/imap4d",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:ipconfig": {
+									"Target": {
+										"Name": "ipconfig",
+										"Sources": [
+											"sys/src/cmd/ip/ipconfig/ipv6.c",
+											"sys/src/cmd/ip/ipconfig/main.c",
+											"sys/src/cmd/ip/ipconfig/ppp.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/ipconfig",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								},
+								"ip:ppp": {
+									"Target": {
+										"Name": "ppp",
+										"Sources": [
+											"sys/src/cmd/ip/ppp/ppp.c",
+											"sys/src/cmd/ip/ppp/compress.c",
+											"sys/src/cmd/ip/ppp/block.c",
+											"sys/src/cmd/ip/ppp/mppc.c",
+											"sys/src/cmd/ip/ppp/ipaux.c",
+											"sys/src/cmd/ip/ppp/thw.c",
+											"sys/src/cmd/ip/ppp/thwack.c",
+											"sys/src/cmd/ip/ppp/unthwack.c"
+										],
+										"Dependencies": null,
+										"Includes": null,
+										"Headers": null,
+										"CompilerFlags": null,
+										"LinkerFlags": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/ppp",
+										"Out": null
+									},
+									"Edges": {},
+									"Built": true,
+									"Output": ""
+								}
+							},
+							"Built": true,
+							"Output": ""
+						}
+					},
+					"Built": true,
+					"Output": ""
+				},
+				"all:kcmds": {
+					"Target": {
+						"Name": "kcmds",
+						"Sources": null,
+						"Dependencies": [
+							"//sys/src/cmd/rc:rc",
+							"//sys/src/cmd/ip/ipconfig:kipconfig"
+						],
+						"Includes": null,
+						"Headers": null,
+						"CompilerFlags": null,
+						"LinkerFlags": null,
+						"Source": "/Users/sevki/Code/harvey/sys/src/cmd",
+						"Out": null
+					},
+					"Edges": {
+						"kcmds:kipconfig": {
+							"Target": {
+								"Name": "kipconfig",
+								"Sources": [
+									"sys/src/cmd/ip/ipconfig/ipv6.c",
+									"sys/src/cmd/ip/ipconfig/main.c",
+									"sys/src/cmd/ip/ipconfig/ppp.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/ip/ipconfig",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"kcmds:rc": {
+							"Target": {
+								"Name": "rc",
+								"Sources": [
+									"sys/src/cmd/rc/code.c",
+									"sys/src/cmd/rc/exec.c",
+									"sys/src/cmd/rc/getflags.c",
+									"sys/src/cmd/rc/glob.c",
+									"sys/src/cmd/rc/havefork.c",
+									"sys/src/cmd/rc/here.c",
+									"sys/src/cmd/rc/io.c",
+									"sys/src/cmd/rc/lex.c",
+									"sys/src/cmd/rc/pcmd.c",
+									"sys/src/cmd/rc/pfnc.c",
+									"sys/src/cmd/rc/plan9.c",
+									"sys/src/cmd/rc/simple.c",
+									"sys/src/cmd/rc/subr.c",
+									"sys/src/cmd/rc/trap.c",
+									"sys/src/cmd/rc/tree.c",
+									"sys/src/cmd/rc/var.c",
+									"sys/src/cmd/rc/y.tab.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/cmd/rc",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						}
+					},
+					"Built": true,
+					"Output": ""
+				},
+				"all:klibs": {
+					"Target": {
+						"Name": "klibs",
+						"Sources": null,
+						"Dependencies": [
+							"//sys/src/libc:klibc",
+							"//sys/src/libip:klibip",
+							"//sys/src/libdraw:klibdraw",
+							"//sys/src/libsec:klibsec"
+						],
+						"Includes": null,
+						"Headers": null,
+						"CompilerFlags": null,
+						"LinkerFlags": null,
+						"Source": "/Users/sevki/Code/harvey/sys/src",
+						"Out": null
+					},
+					"Edges": {
+						"klibs:klibc": {
+							"Target": {
+								"Name": "klibc",
+								"Sources": [
+									"sys/src/libc/9sys/abort.c",
+									"sys/src/libc/9sys/access.c",
+									"sys/src/libc/9sys/announce.c",
+									"sys/src/libc/9sys/convD2M.c",
+									"sys/src/libc/9sys/convM2D.c",
+									"sys/src/libc/9sys/convM2S.c",
+									"sys/src/libc/9sys/convS2M.c",
+									"sys/src/libc/9sys/cputime.c",
+									"sys/src/libc/9sys/ctime.c",
+									"sys/src/libc/9sys/dial.c",
+									"sys/src/libc/9sys/dirfstat.c",
+									"sys/src/libc/9sys/dirfwstat.c",
+									"sys/src/libc/9sys/dirmodefmt.c",
+									"sys/src/libc/9sys/dirread.c",
+									"sys/src/libc/9sys/dirstat.c",
+									"sys/src/libc/9sys/dirwstat.c",
+									"sys/src/libc/9sys/fcallfmt.c",
+									"sys/src/libc/9sys/fork.c",
+									"sys/src/libc/9sys/getnetconninfo.c",
+									"sys/src/libc/9sys/getenv.c",
+									"sys/src/libc/9sys/getpid.c",
+									"sys/src/libc/9sys/getppid.c",
+									"sys/src/libc/9sys/getwd.c",
+									"sys/src/libc/9sys/iounit.c",
+									"sys/src/libc/9sys/nulldir.c",
+									"sys/src/libc/9sys/postnote.c",
+									"sys/src/libc/9sys/privalloc.c",
+									"sys/src/libc/9sys/pushssl.c",
+									"sys/src/libc/9sys/pushtls.c",
+									"sys/src/libc/9sys/putenv.c",
+									"sys/src/libc/9sys/qlock.c",
+									"sys/src/libc/9sys/read9pmsg.c",
+									"sys/src/libc/9sys/readv.c",
+									"sys/src/libc/9sys/rerrstr.c",
+									"sys/src/libc/9sys/sbrk.c",
+									"sys/src/libc/9sys/setnetmtpt.c",
+									"sys/src/libc/9sys/sysfatal.c",
+									"sys/src/libc/9sys/syslog.c",
+									"sys/src/libc/9sys/sysname.c",
+									"sys/src/libc/9sys/time.c",
+									"sys/src/libc/9sys/times.c",
+									"sys/src/libc/9sys/tm2sec.c",
+									"sys/src/libc/9sys/truerand.c",
+									"sys/src/libc/9sys/wait.c",
+									"sys/src/libc/9sys/waitpid.c",
+									"sys/src/libc/9sys/werrstr.c",
+									"sys/src/libc/9sys/writev.c",
+									"sys/src/libc/9syscall/alarm.s",
+									"sys/src/libc/9syscall/await.s",
+									"sys/src/libc/9syscall/bind.s",
+									"sys/src/libc/9syscall/brk_.s",
+									"sys/src/libc/9syscall/chdir.s",
+									"sys/src/libc/9syscall/close.s",
+									"sys/src/libc/9syscall/create.s",
+									"sys/src/libc/9syscall/dup.s",
+									"sys/src/libc/9syscall/_errstr.s",
+									"sys/src/libc/9syscall/errstr.s",
+									"sys/src/libc/9syscall/execac.s",
+									"sys/src/libc/9syscall/exec.s",
+									"sys/src/libc/9syscall/_exits.s",
+									"sys/src/libc/9syscall/fauth.s",
+									"sys/src/libc/9syscall/fd2path.s",
+									"sys/src/libc/9syscall/_fsession.s",
+									"sys/src/libc/9syscall/_fstat.s",
+									"sys/src/libc/9syscall/fstat.s",
+									"sys/src/libc/9syscall/fversion.s",
+									"sys/src/libc/9syscall/_fwstat.s",
+									"sys/src/libc/9syscall/fwstat.s",
+									"sys/src/libc/9syscall/_mount.s",
+									"sys/src/libc/9syscall/mount.s",
+									"sys/src/libc/9syscall/nixsyscall.s",
+									"sys/src/libc/9syscall/noted.s",
+									"sys/src/libc/9syscall/notify.s",
+									"sys/src/libc/9syscall/nsec.s",
+									"sys/src/libc/9syscall/open.s",
+									"sys/src/libc/9syscall/oseek.s",
+									"sys/src/libc/9syscall/pipe.s",
+									"sys/src/libc/9syscall/pread.s",
+									"sys/src/libc/9syscall/pwrite.s",
+									"sys/src/libc/9syscall/read.s",
+									"sys/src/libc/9syscall/remove.s",
+									"sys/src/libc/9syscall/rendezvous.s",
+									"sys/src/libc/9syscall/rfork.s",
+									"sys/src/libc/9syscall/_seek.s",
+									"sys/src/libc/9syscall/segattach.s",
+									"sys/src/libc/9syscall/segbrk.s",
+									"sys/src/libc/9syscall/segdetach.s",
+									"sys/src/libc/9syscall/segflush.s",
+									"sys/src/libc/9syscall/segfree.s",
+									"sys/src/libc/9syscall/semacquire.s",
+									"sys/src/libc/9syscall/semalt.s",
+									"sys/src/libc/9syscall/semrelease.s",
+									"sys/src/libc/9syscall/semsleep.s",
+									"sys/src/libc/9syscall/semwakeup.s",
+									"sys/src/libc/9syscall/sleep.s",
+									"sys/src/libc/9syscall/_stat.s",
+									"sys/src/libc/9syscall/stat.s",
+									"sys/src/libc/9syscall/sysr1.s",
+									"sys/src/libc/9syscall/tsemacquire.s",
+									"sys/src/libc/9syscall/unmount.s",
+									"sys/src/libc/9syscall/_wait.s",
+									"sys/src/libc/9syscall/write.s",
+									"sys/src/libc/9syscall/_wstat.s",
+									"sys/src/libc/9syscall/wstat.s",
+									"sys/src/libc/9syscall/ziofree.s",
+									"sys/src/libc/9syscall/ziopread.s",
+									"sys/src/libc/9syscall/ziopwrite.s",
+									"sys/src/libc/fmt/dofmt.c",
+									"sys/src/libc/fmt/dorfmt.c",
+									"sys/src/libc/fmt/errfmt.c",
+									"sys/src/libc/fmt/fltfmt.c",
+									"sys/src/libc/fmt/fmt.c",
+									"sys/src/libc/fmt/fmtfd.c",
+									"sys/src/libc/fmt/fmtlock.c",
+									"sys/src/libc/fmt/fmtprint.c",
+									"sys/src/libc/fmt/fmtquote.c",
+									"sys/src/libc/fmt/fmtrune.c",
+									"sys/src/libc/fmt/fmtstr.c",
+									"sys/src/libc/fmt/fmtvprint.c",
+									"sys/src/libc/fmt/fprint.c",
+									"sys/src/libc/fmt/print.c",
+									"sys/src/libc/fmt/runefmtstr.c",
+									"sys/src/libc/fmt/runeseprint.c",
+									"sys/src/libc/fmt/runesmprint.c",
+									"sys/src/libc/fmt/runesnprint.c",
+									"sys/src/libc/fmt/runesprint.c",
+									"sys/src/libc/fmt/runevseprint.c",
+									"sys/src/libc/fmt/runevsmprint.c",
+									"sys/src/libc/fmt/runevsnprint.c",
+									"sys/src/libc/fmt/seprint.c",
+									"sys/src/libc/fmt/smprint.c",
+									"sys/src/libc/fmt/snprint.c",
+									"sys/src/libc/fmt/sprint.c",
+									"sys/src/libc/fmt/vfprint.c",
+									"sys/src/libc/fmt/vseprint.c",
+									"sys/src/libc/fmt/vsmprint.c",
+									"sys/src/libc/fmt/vsnprint.c",
+									"sys/src/libc/port/_assert.c",
+									"sys/src/libc/port/abs.c",
+									"sys/src/libc/port/asin.c",
+									"sys/src/libc/port/atan.c",
+									"sys/src/libc/port/atan2.c",
+									"sys/src/libc/port/atexit.c",
+									"sys/src/libc/port/atnotify.c",
+									"sys/src/libc/port/atof.c",
+									"sys/src/libc/port/atol.c",
+									"sys/src/libc/port/atoll.c",
+									"sys/src/libc/port/cistrcmp.c",
+									"sys/src/libc/port/cistrncmp.c",
+									"sys/src/libc/port/cistrstr.c",
+									"sys/src/libc/port/charstod.c",
+									"sys/src/libc/port/cleanname.c",
+									"sys/src/libc/port/ctype.c",
+									"sys/src/libc/port/encodefmt.c",
+									"sys/src/libc/port/execl.c",
+									"sys/src/libc/port/exp.c",
+									"sys/src/libc/port/fabs.c",
+									"sys/src/libc/port/floor.c",
+									"sys/src/libc/port/fmod.c",
+									"sys/src/libc/port/frand.c",
+									"sys/src/libc/port/frexp.c",
+									"sys/src/libc/port/getcallerpc.c",
+									"sys/src/libc/port/getfields.c",
+									"sys/src/libc/port/getuser.c",
+									"sys/src/libc/port/hangup.c",
+									"sys/src/libc/port/hypot.c",
+									"sys/src/libc/port/lnrand.c",
+									"sys/src/libc/port/lock.c",
+									"sys/src/libc/port/log.c",
+									"sys/src/libc/port/lrand.c",
+									"sys/src/libc/port/malloc.c",
+									"sys/src/libc/port/memccpy.c",
+									"sys/src/libc/port/memchr.c",
+									"sys/src/libc/port/memcmp.c",
+									"sys/src/libc/port/memmove.c",
+									"sys/src/libc/port/memset.c",
+									"sys/src/libc/port/mktemp.c",
+									"sys/src/libc/port/muldiv.c",
+									"sys/src/libc/port/nan.c",
+									"sys/src/libc/port/needsrcquote.c",
+									"sys/src/libc/port/netcrypt.c",
+									"sys/src/libc/port/netmkaddr.c",
+									"sys/src/libc/port/nrand.c",
+									"sys/src/libc/port/ntruerand.c",
+									"sys/src/libc/port/perror.c",
+									"sys/src/libc/port/pool.c",
+									"sys/src/libc/port/pow.c",
+									"sys/src/libc/port/pow10.c",
+									"sys/src/libc/port/profile.c",
+									"sys/src/libc/port/qsort.c",
+									"sys/src/libc/port/quote.c",
+									"sys/src/libc/port/rand.c",
+									"sys/src/libc/port/readn.c",
+									"sys/src/libc/port/rune.c",
+									"sys/src/libc/port/runebase.c",
+									"sys/src/libc/port/runebsearch.c",
+									"sys/src/libc/port/runestrcat.c",
+									"sys/src/libc/port/runestrchr.c",
+									"sys/src/libc/port/runestrcmp.c",
+									"sys/src/libc/port/runestrcpy.c",
+									"sys/src/libc/port/runestrecpy.c",
+									"sys/src/libc/port/runestrdup.c",
+									"sys/src/libc/port/runestrncat.c",
+									"sys/src/libc/port/runestrncmp.c",
+									"sys/src/libc/port/runestrncpy.c",
+									"sys/src/libc/port/runestrrchr.c",
+									"sys/src/libc/port/runestrlen.c",
+									"sys/src/libc/port/runestrstr.c",
+									"sys/src/libc/port/runetype.c",
+									"sys/src/libc/port/sin.c",
+									"sys/src/libc/port/sinh.c",
+									"sys/src/libc/port/sqrt.c",
+									"sys/src/libc/port/strcat.c",
+									"sys/src/libc/port/strchr.c",
+									"sys/src/libc/port/strcmp.c",
+									"sys/src/libc/port/strcpy.c",
+									"sys/src/libc/port/strecpy.c",
+									"sys/src/libc/port/strcspn.c",
+									"sys/src/libc/port/strdup.c",
+									"sys/src/libc/port/strlen.c",
+									"sys/src/libc/port/strncat.c",
+									"sys/src/libc/port/strncmp.c",
+									"sys/src/libc/port/strncpy.c",
+									"sys/src/libc/port/strpbrk.c",
+									"sys/src/libc/port/strrchr.c",
+									"sys/src/libc/port/strspn.c",
+									"sys/src/libc/port/strstr.c",
+									"sys/src/libc/port/strtod.c",
+									"sys/src/libc/port/strtok.c",
+									"sys/src/libc/port/strtol.c",
+									"sys/src/libc/port/strtoll.c",
+									"sys/src/libc/port/strtoul.c",
+									"sys/src/libc/port/strtoull.c",
+									"sys/src/libc/port/tan.c",
+									"sys/src/libc/port/tanh.c",
+									"sys/src/libc/port/tokenize.c",
+									"sys/src/libc/port/toupper.c",
+									"sys/src/libc/port/utfecpy.c",
+									"sys/src/libc/port/utflen.c",
+									"sys/src/libc/port/utfnlen.c",
+									"sys/src/libc/port/utfrune.c",
+									"sys/src/libc/port/utfrrune.c",
+									"sys/src/libc/port/utfutf.c",
+									"sys/src/libc/port/u16.c",
+									"sys/src/libc/port/u32.c",
+									"sys/src/libc/port/u64.c",
+									"sys/src/libc/amd64/seek.c",
+									"sys/src/libc/amd64/notejmp.c",
+									"sys/src/libc/amd64/cycles.c",
+									"sys/src/libc/amd64/argv0.c",
+									"sys/src/libc/amd64/rdpmc.c",
+									"sys/src/libc/amd64/setjmp.s",
+									"sys/src/libc/amd64/sqrt.s",
+									"sys/src/libc/amd64/tas.s",
+									"sys/src/libc/amd64/atom.S",
+									"sys/src/libc/amd64/main9.S"
+								],
+								"Dependencies": [
+									"//sys/src/libc/9syscall:syscallfiles"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libc",
+								"Out": null
+							},
+							"Edges": {
+								"klibc:syscallfiles": {
+									"Target": {
+										"Name": "syscallfiles",
+										"Mode": "syscallfiles",
+										"ARCH": "amd64",
+										"OutPath": "/Users/sevki/Code/harvey/sys/src/libc/9syscall",
+										"SysConf": "/Users/sevki/Code/harvey/sys/src/sysconf.json",
+										"Dependencies": [
+											"syscallheader"
+										],
+										"Out": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/libc/9syscall"
+									},
+									"Edges": {
+										"syscallfiles:syscallheader": {
+											"Target": {
+												"Name": "syscallheader",
+												"Mode": "sys.h",
+												"ARCH": "amd64",
+												"OutPath": "/Users/sevki/Code/harvey/sys/src/libc/9syscall/sys.h",
+												"SysConf": "/Users/sevki/Code/harvey/sys/src/sysconf.json",
+												"Dependencies": null,
+												"Out": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/libc/9syscall"
+											},
+											"Edges": {},
+											"Built": false,
+											"Output": ""
+										}
+									},
+									"Built": false,
+									"Output": ""
+								}
+							},
+							"Built": false,
+							"Output": ""
+						},
+						"klibs:klibdraw": {
+							"Target": {
+								"Name": "klibdraw",
+								"Sources": [
+									"sys/src/libdraw/alloc.c",
+									"sys/src/libdraw/allocimagemix.c",
+									"sys/src/libdraw/arith.c",
+									"sys/src/libdraw/bezier.c",
+									"sys/src/libdraw/border.c",
+									"sys/src/libdraw/buildfont.c",
+									"sys/src/libdraw/bytesperline.c",
+									"sys/src/libdraw/chan.c",
+									"sys/src/libdraw/cloadimage.c",
+									"sys/src/libdraw/computil.c",
+									"sys/src/libdraw/creadimage.c",
+									"sys/src/libdraw/debug.c",
+									"sys/src/libdraw/defont.c",
+									"sys/src/libdraw/draw.c",
+									"sys/src/libdraw/drawrepl.c",
+									"sys/src/libdraw/egetrect.c",
+									"sys/src/libdraw/ellipse.c",
+									"sys/src/libdraw/emenuhit.c",
+									"sys/src/libdraw/event.c",
+									"sys/src/libdraw/fmt.c",
+									"sys/src/libdraw/font.c",
+									"sys/src/libdraw/freesubfont.c",
+									"sys/src/libdraw/getdefont.c",
+									"sys/src/libdraw/getrect.c",
+									"sys/src/libdraw/getsubfont.c",
+									"sys/src/libdraw/icossin.c",
+									"sys/src/libdraw/icossin2.c",
+									"sys/src/libdraw/init.c",
+									"sys/src/libdraw/keyboard.c",
+									"sys/src/libdraw/line.c",
+									"sys/src/libdraw/menuhit.c",
+									"sys/src/libdraw/mkfont.c",
+									"sys/src/libdraw/mouse.c",
+									"sys/src/libdraw/newwindow.c",
+									"sys/src/libdraw/openfont.c",
+									"sys/src/libdraw/poly.c",
+									"sys/src/libdraw/loadimage.c",
+									"sys/src/libdraw/readcolmap.c",
+									"sys/src/libdraw/readimage.c",
+									"sys/src/libdraw/readsubfont.c",
+									"sys/src/libdraw/rectclip.c",
+									"sys/src/libdraw/replclipr.c",
+									"sys/src/libdraw/rgb.c",
+									"sys/src/libdraw/scroll.c",
+									"sys/src/libdraw/string.c",
+									"sys/src/libdraw/stringbg.c",
+									"sys/src/libdraw/stringsubfont.c",
+									"sys/src/libdraw/stringwidth.c",
+									"sys/src/libdraw/subfont.c",
+									"sys/src/libdraw/subfontcache.c",
+									"sys/src/libdraw/subfontname.c",
+									"sys/src/libdraw/unloadimage.c",
+									"sys/src/libdraw/window.c",
+									"sys/src/libdraw/writecolmap.c",
+									"sys/src/libdraw/writeimage.c",
+									"sys/src/libdraw/writesubfont.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libdraw",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"klibs:klibip": {
+							"Target": {
+								"Name": "klibip",
+								"Sources": [
+									"sys/src/libip/eipfmt.c",
+									"sys/src/libip/equivip.c",
+									"sys/src/libip/parseip.c",
+									"sys/src/libip/parseether.c",
+									"sys/src/libip/myetheraddr.c",
+									"sys/src/libip/myipaddr.c",
+									"sys/src/libip/classmask.c",
+									"sys/src/libip/bo.c",
+									"sys/src/libip/readipifc.c",
+									"sys/src/libip/ipaux.c",
+									"sys/src/libip/ptclbsum.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libip",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"klibs:klibsec": {
+							"Target": {
+								"Name": "klibsec",
+								"Sources": [
+									"sys/src/libsec/port/aes.c",
+									"sys/src/libsec/port/blowfish.c",
+									"sys/src/libsec/port/crypt.c",
+									"sys/src/libsec/port/decodepem.c",
+									"sys/src/libsec/port/des3CBC.c",
+									"sys/src/libsec/port/des3ECB.c",
+									"sys/src/libsec/port/des.c",
+									"sys/src/libsec/port/desCBC.c",
+									"sys/src/libsec/port/desECB.c",
+									"sys/src/libsec/port/desmodes.c",
+									"sys/src/libsec/port/dsaalloc.c",
+									"sys/src/libsec/port/dsagen.c",
+									"sys/src/libsec/port/dsaprimes.c",
+									"sys/src/libsec/port/dsaprivtopub.c",
+									"sys/src/libsec/port/dsasign.c",
+									"sys/src/libsec/port/dsaverify.c",
+									"sys/src/libsec/port/egalloc.c",
+									"sys/src/libsec/port/egdecrypt.c",
+									"sys/src/libsec/port/egencrypt.c",
+									"sys/src/libsec/port/eggen.c",
+									"sys/src/libsec/port/egprivtopub.c",
+									"sys/src/libsec/port/egsign.c",
+									"sys/src/libsec/port/egverify.c",
+									"sys/src/libsec/port/fastrand.c",
+									"sys/src/libsec/port/genprime.c",
+									"sys/src/libsec/port/genrandom.c",
+									"sys/src/libsec/port/gensafeprime.c",
+									"sys/src/libsec/port/genstrongprime.c",
+									"sys/src/libsec/port/hmac.c",
+									"sys/src/libsec/port/md4.c",
+									"sys/src/libsec/port/md5block.c",
+									"sys/src/libsec/port/md5.c",
+									"sys/src/libsec/port/md5pickle.c",
+									"sys/src/libsec/port/nfastrand.c",
+									"sys/src/libsec/port/prng.c",
+									"sys/src/libsec/port/probably_prime.c",
+									"sys/src/libsec/port/rc4.c",
+									"sys/src/libsec/port/readcert.c",
+									"sys/src/libsec/port/rsaalloc.c",
+									"sys/src/libsec/port/rsadecrypt.c",
+									"sys/src/libsec/port/rsaencrypt.c",
+									"sys/src/libsec/port/rsafill.c",
+									"sys/src/libsec/port/rsagen.c",
+									"sys/src/libsec/port/rsaprivtopub.c",
+									"sys/src/libsec/port/sha1block.c",
+									"sys/src/libsec/port/sha1.c",
+									"sys/src/libsec/port/sha1pickle.c",
+									"sys/src/libsec/port/sha2_128.c",
+									"sys/src/libsec/port/sha2_64.c",
+									"sys/src/libsec/port/sha2block128.c",
+									"sys/src/libsec/port/sha2block64.c",
+									"sys/src/libsec/port/smallprimes.c",
+									"sys/src/libsec/port/smallprimetest.c",
+									"sys/src/libsec/port/thumb.c",
+									"sys/src/libsec/port/tlshand.c",
+									"sys/src/libsec/port/x509.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libsec",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						}
+					},
+					"Built": false,
+					"Output": ""
+				},
+				"all:libs": {
+					"Target": {
+						"Name": "libs",
+						"Sources": null,
+						"Dependencies": [
+							"//sys/src/libc:libc",
+							"//sys/src/libip:libip",
+							"//sys/src/libdraw:libdraw",
+							"//sys/src/lib9p:lib9p",
+							"//sys/src/libString:libString",
+							"//sys/src/libauth:libauth",
+							"//sys/src/libauthsrv:libauthsrv",
+							"//sys/src/libavl:libavl",
+							"//sys/src/libbin:libbin",
+							"//sys/src/libbio:libbio",
+							"//sys/src/libcomplete:libcomplete",
+							"//sys/src/libcontrol:libcontrol",
+							"//sys/src/libdisk:libdisk",
+							"//sys/src/libflate:libflate",
+							"//sys/src/libframe:libframe",
+							"//sys/src/libgeometry:libgeometry",
+							"//sys/src/libhtml:libhtml",
+							"//sys/src/libhttpd:libhttpd",
+							"//sys/src/liblex:liblex",
+							"//sys/src/libmach:libmach",
+							"//sys/src/libmemdraw:libmemdraw",
+							"//sys/src/libmemlayer:libmemlayer",
+							"//sys/src/libmp:libmp",
+							"//sys/src/libndb:libndb",
+							"//sys/src/liboventi:liboventi",
+							"//sys/src/libplumb:libplumb",
+							"//sys/src/libregexp:libregexp",
+							"//sys/src/libsec:libsec",
+							"//sys/src/libstdio:libstdio",
+							"//sys/src/libsunrpc:libsunrpc",
+							"//sys/src/libthread:libthread",
+							"//sys/src/libventi:libventi"
+						],
+						"Includes": null,
+						"Headers": null,
+						"CompilerFlags": null,
+						"LinkerFlags": null,
+						"Source": "/Users/sevki/Code/harvey/sys/src",
+						"Out": null
+					},
+					"Edges": {
+						"libs:lib9p": {
+							"Target": {
+								"Name": "lib9p",
+								"Sources": [
+									"sys/src/lib9p/auth.c",
+									"sys/src/lib9p/dirread.c",
+									"sys/src/lib9p/fid.c",
+									"sys/src/lib9p/file.c",
+									"sys/src/lib9p/intmap.c",
+									"sys/src/lib9p/listen.c",
+									"sys/src/lib9p/mem.c",
+									"sys/src/lib9p/req.c",
+									"sys/src/lib9p/parse.c",
+									"sys/src/lib9p/post.c",
+									"sys/src/lib9p/rfork.c",
+									"sys/src/lib9p/srv.c",
+									"sys/src/lib9p/thread.c",
+									"sys/src/lib9p/uid.c",
+									"sys/src/lib9p/util.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/lib9p",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libString": {
+							"Target": {
+								"Name": "libString",
+								"Sources": [
+									"sys/src/libString/s_alloc.c",
+									"sys/src/libString/s_append.c",
+									"sys/src/libString/s_array.c",
+									"sys/src/libString/s_copy.c",
+									"sys/src/libString/s_getline.c",
+									"sys/src/libString/s_grow.c",
+									"sys/src/libString/s_memappend.c",
+									"sys/src/libString/s_nappend.c",
+									"sys/src/libString/s_parse.c",
+									"sys/src/libString/s_putc.c",
+									"sys/src/libString/s_rdinstack.c",
+									"sys/src/libString/s_read.c",
+									"sys/src/libString/s_read_line.c",
+									"sys/src/libString/s_reset.c",
+									"sys/src/libString/s_terminate.c",
+									"sys/src/libString/s_tolower.c",
+									"sys/src/libString/s_unique.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libString",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libauth": {
+							"Target": {
+								"Name": "libauth",
+								"Sources": [
+									"sys/src/libauth/amount.c",
+									"sys/src/libauth/amount_getkey.c",
+									"sys/src/libauth/attr.c",
+									"sys/src/libauth/auth_attr.c",
+									"sys/src/libauth/auth_challenge.c",
+									"sys/src/libauth/auth_chuid.c",
+									"sys/src/libauth/auth_getkey.c",
+									"sys/src/libauth/auth_getuserpasswd.c",
+									"sys/src/libauth/auth_proxy.c",
+									"sys/src/libauth/auth_respond.c",
+									"sys/src/libauth/auth_rpc.c",
+									"sys/src/libauth/auth_userpasswd.c",
+									"sys/src/libauth/auth_wep.c",
+									"sys/src/libauth/login.c",
+									"sys/src/libauth/newns.c",
+									"sys/src/libauth/noworld.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libauth",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libauthsrv": {
+							"Target": {
+								"Name": "libauthsrv",
+								"Sources": [
+									"sys/src/libauthsrv/_asgetticket.c",
+									"sys/src/libauthsrv/_asrdresp.c",
+									"sys/src/libauthsrv/authdial.c",
+									"sys/src/libauthsrv/convA2M.c",
+									"sys/src/libauthsrv/convM2A.c",
+									"sys/src/libauthsrv/convM2PR.c",
+									"sys/src/libauthsrv/convM2T.c",
+									"sys/src/libauthsrv/convM2TR.c",
+									"sys/src/libauthsrv/convPR2M.c",
+									"sys/src/libauthsrv/convT2M.c",
+									"sys/src/libauthsrv/convTR2M.c",
+									"sys/src/libauthsrv/nvcsum.c",
+									"sys/src/libauthsrv/opasstokey.c",
+									"sys/src/libauthsrv/passtokey.c",
+									"sys/src/libauthsrv/readnvram.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libauthsrv",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libavl": {
+							"Target": {
+								"Name": "libavl",
+								"Sources": [
+									"sys/src/libavl/avl.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libavl",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libbin": {
+							"Target": {
+								"Name": "libbin",
+								"Sources": [
+									"sys/src/libbin/bin.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libbin",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libbio": {
+							"Target": {
+								"Name": "libbio",
+								"Sources": [
+									"sys/src/libbio/bbuffered.c",
+									"sys/src/libbio/bfildes.c",
+									"sys/src/libbio/bflush.c",
+									"sys/src/libbio/bgetrune.c",
+									"sys/src/libbio/bgetc.c",
+									"sys/src/libbio/bgetd.c",
+									"sys/src/libbio/binit.c",
+									"sys/src/libbio/boffset.c",
+									"sys/src/libbio/bprint.c",
+									"sys/src/libbio/bputrune.c",
+									"sys/src/libbio/bputc.c",
+									"sys/src/libbio/brdline.c",
+									"sys/src/libbio/brdstr.c",
+									"sys/src/libbio/bread.c",
+									"sys/src/libbio/bseek.c",
+									"sys/src/libbio/bwrite.c",
+									"sys/src/libbio/bvprint.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libbio",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libc": {
+							"Target": {
+								"Name": "libc",
+								"Sources": [
+									"sys/src/libc/9sys/abort.c",
+									"sys/src/libc/9sys/access.c",
+									"sys/src/libc/9sys/announce.c",
+									"sys/src/libc/9sys/convD2M.c",
+									"sys/src/libc/9sys/convM2D.c",
+									"sys/src/libc/9sys/convM2S.c",
+									"sys/src/libc/9sys/convS2M.c",
+									"sys/src/libc/9sys/cputime.c",
+									"sys/src/libc/9sys/ctime.c",
+									"sys/src/libc/9sys/dial.c",
+									"sys/src/libc/9sys/dirfstat.c",
+									"sys/src/libc/9sys/dirfwstat.c",
+									"sys/src/libc/9sys/dirmodefmt.c",
+									"sys/src/libc/9sys/dirread.c",
+									"sys/src/libc/9sys/dirstat.c",
+									"sys/src/libc/9sys/dirwstat.c",
+									"sys/src/libc/9sys/fcallfmt.c",
+									"sys/src/libc/9sys/fork.c",
+									"sys/src/libc/9sys/getnetconninfo.c",
+									"sys/src/libc/9sys/getenv.c",
+									"sys/src/libc/9sys/getpid.c",
+									"sys/src/libc/9sys/getppid.c",
+									"sys/src/libc/9sys/getwd.c",
+									"sys/src/libc/9sys/iounit.c",
+									"sys/src/libc/9sys/nulldir.c",
+									"sys/src/libc/9sys/postnote.c",
+									"sys/src/libc/9sys/privalloc.c",
+									"sys/src/libc/9sys/pushssl.c",
+									"sys/src/libc/9sys/pushtls.c",
+									"sys/src/libc/9sys/putenv.c",
+									"sys/src/libc/9sys/qlock.c",
+									"sys/src/libc/9sys/read9pmsg.c",
+									"sys/src/libc/9sys/readv.c",
+									"sys/src/libc/9sys/rerrstr.c",
+									"sys/src/libc/9sys/sbrk.c",
+									"sys/src/libc/9sys/setnetmtpt.c",
+									"sys/src/libc/9sys/sysfatal.c",
+									"sys/src/libc/9sys/syslog.c",
+									"sys/src/libc/9sys/sysname.c",
+									"sys/src/libc/9sys/time.c",
+									"sys/src/libc/9sys/times.c",
+									"sys/src/libc/9sys/tm2sec.c",
+									"sys/src/libc/9sys/truerand.c",
+									"sys/src/libc/9sys/wait.c",
+									"sys/src/libc/9sys/waitpid.c",
+									"sys/src/libc/9sys/werrstr.c",
+									"sys/src/libc/9sys/writev.c",
+									"sys/src/libc/9syscall/alarm.s",
+									"sys/src/libc/9syscall/await.s",
+									"sys/src/libc/9syscall/bind.s",
+									"sys/src/libc/9syscall/brk_.s",
+									"sys/src/libc/9syscall/chdir.s",
+									"sys/src/libc/9syscall/close.s",
+									"sys/src/libc/9syscall/create.s",
+									"sys/src/libc/9syscall/dup.s",
+									"sys/src/libc/9syscall/_errstr.s",
+									"sys/src/libc/9syscall/errstr.s",
+									"sys/src/libc/9syscall/execac.s",
+									"sys/src/libc/9syscall/exec.s",
+									"sys/src/libc/9syscall/_exits.s",
+									"sys/src/libc/9syscall/fauth.s",
+									"sys/src/libc/9syscall/fd2path.s",
+									"sys/src/libc/9syscall/_fsession.s",
+									"sys/src/libc/9syscall/_fstat.s",
+									"sys/src/libc/9syscall/fstat.s",
+									"sys/src/libc/9syscall/fversion.s",
+									"sys/src/libc/9syscall/_fwstat.s",
+									"sys/src/libc/9syscall/fwstat.s",
+									"sys/src/libc/9syscall/_mount.s",
+									"sys/src/libc/9syscall/mount.s",
+									"sys/src/libc/9syscall/nixsyscall.s",
+									"sys/src/libc/9syscall/noted.s",
+									"sys/src/libc/9syscall/notify.s",
+									"sys/src/libc/9syscall/nsec.s",
+									"sys/src/libc/9syscall/open.s",
+									"sys/src/libc/9syscall/oseek.s",
+									"sys/src/libc/9syscall/pipe.s",
+									"sys/src/libc/9syscall/pread.s",
+									"sys/src/libc/9syscall/pwrite.s",
+									"sys/src/libc/9syscall/read.s",
+									"sys/src/libc/9syscall/remove.s",
+									"sys/src/libc/9syscall/rendezvous.s",
+									"sys/src/libc/9syscall/rfork.s",
+									"sys/src/libc/9syscall/_seek.s",
+									"sys/src/libc/9syscall/segattach.s",
+									"sys/src/libc/9syscall/segbrk.s",
+									"sys/src/libc/9syscall/segdetach.s",
+									"sys/src/libc/9syscall/segflush.s",
+									"sys/src/libc/9syscall/segfree.s",
+									"sys/src/libc/9syscall/semacquire.s",
+									"sys/src/libc/9syscall/semalt.s",
+									"sys/src/libc/9syscall/semrelease.s",
+									"sys/src/libc/9syscall/semsleep.s",
+									"sys/src/libc/9syscall/semwakeup.s",
+									"sys/src/libc/9syscall/sleep.s",
+									"sys/src/libc/9syscall/_stat.s",
+									"sys/src/libc/9syscall/stat.s",
+									"sys/src/libc/9syscall/sysr1.s",
+									"sys/src/libc/9syscall/tsemacquire.s",
+									"sys/src/libc/9syscall/unmount.s",
+									"sys/src/libc/9syscall/_wait.s",
+									"sys/src/libc/9syscall/write.s",
+									"sys/src/libc/9syscall/_wstat.s",
+									"sys/src/libc/9syscall/wstat.s",
+									"sys/src/libc/9syscall/ziofree.s",
+									"sys/src/libc/9syscall/ziopread.s",
+									"sys/src/libc/9syscall/ziopwrite.s",
+									"sys/src/libc/fmt/dofmt.c",
+									"sys/src/libc/fmt/dorfmt.c",
+									"sys/src/libc/fmt/errfmt.c",
+									"sys/src/libc/fmt/fltfmt.c",
+									"sys/src/libc/fmt/fmt.c",
+									"sys/src/libc/fmt/fmtfd.c",
+									"sys/src/libc/fmt/fmtlock.c",
+									"sys/src/libc/fmt/fmtprint.c",
+									"sys/src/libc/fmt/fmtquote.c",
+									"sys/src/libc/fmt/fmtrune.c",
+									"sys/src/libc/fmt/fmtstr.c",
+									"sys/src/libc/fmt/fmtvprint.c",
+									"sys/src/libc/fmt/fprint.c",
+									"sys/src/libc/fmt/print.c",
+									"sys/src/libc/fmt/runefmtstr.c",
+									"sys/src/libc/fmt/runeseprint.c",
+									"sys/src/libc/fmt/runesmprint.c",
+									"sys/src/libc/fmt/runesnprint.c",
+									"sys/src/libc/fmt/runesprint.c",
+									"sys/src/libc/fmt/runevseprint.c",
+									"sys/src/libc/fmt/runevsmprint.c",
+									"sys/src/libc/fmt/runevsnprint.c",
+									"sys/src/libc/fmt/seprint.c",
+									"sys/src/libc/fmt/smprint.c",
+									"sys/src/libc/fmt/snprint.c",
+									"sys/src/libc/fmt/sprint.c",
+									"sys/src/libc/fmt/vfprint.c",
+									"sys/src/libc/fmt/vseprint.c",
+									"sys/src/libc/fmt/vsmprint.c",
+									"sys/src/libc/fmt/vsnprint.c",
+									"sys/src/libc/port/_assert.c",
+									"sys/src/libc/port/abs.c",
+									"sys/src/libc/port/asin.c",
+									"sys/src/libc/port/atan.c",
+									"sys/src/libc/port/atan2.c",
+									"sys/src/libc/port/atexit.c",
+									"sys/src/libc/port/atnotify.c",
+									"sys/src/libc/port/atof.c",
+									"sys/src/libc/port/atol.c",
+									"sys/src/libc/port/atoll.c",
+									"sys/src/libc/port/cistrcmp.c",
+									"sys/src/libc/port/cistrncmp.c",
+									"sys/src/libc/port/cistrstr.c",
+									"sys/src/libc/port/charstod.c",
+									"sys/src/libc/port/cleanname.c",
+									"sys/src/libc/port/ctype.c",
+									"sys/src/libc/port/encodefmt.c",
+									"sys/src/libc/port/execl.c",
+									"sys/src/libc/port/exp.c",
+									"sys/src/libc/port/fabs.c",
+									"sys/src/libc/port/floor.c",
+									"sys/src/libc/port/fmod.c",
+									"sys/src/libc/port/frand.c",
+									"sys/src/libc/port/frexp.c",
+									"sys/src/libc/port/getcallerpc.c",
+									"sys/src/libc/port/getfields.c",
+									"sys/src/libc/port/getuser.c",
+									"sys/src/libc/port/hangup.c",
+									"sys/src/libc/port/hypot.c",
+									"sys/src/libc/port/lnrand.c",
+									"sys/src/libc/port/lock.c",
+									"sys/src/libc/port/log.c",
+									"sys/src/libc/port/lrand.c",
+									"sys/src/libc/port/malloc.c",
+									"sys/src/libc/port/memccpy.c",
+									"sys/src/libc/port/memchr.c",
+									"sys/src/libc/port/memcmp.c",
+									"sys/src/libc/port/memmove.c",
+									"sys/src/libc/port/memset.c",
+									"sys/src/libc/port/mktemp.c",
+									"sys/src/libc/port/muldiv.c",
+									"sys/src/libc/port/nan.c",
+									"sys/src/libc/port/needsrcquote.c",
+									"sys/src/libc/port/netcrypt.c",
+									"sys/src/libc/port/netmkaddr.c",
+									"sys/src/libc/port/nrand.c",
+									"sys/src/libc/port/ntruerand.c",
+									"sys/src/libc/port/perror.c",
+									"sys/src/libc/port/pool.c",
+									"sys/src/libc/port/pow.c",
+									"sys/src/libc/port/pow10.c",
+									"sys/src/libc/port/profile.c",
+									"sys/src/libc/port/qsort.c",
+									"sys/src/libc/port/quote.c",
+									"sys/src/libc/port/rand.c",
+									"sys/src/libc/port/readn.c",
+									"sys/src/libc/port/rune.c",
+									"sys/src/libc/port/runebase.c",
+									"sys/src/libc/port/runebsearch.c",
+									"sys/src/libc/port/runestrcat.c",
+									"sys/src/libc/port/runestrchr.c",
+									"sys/src/libc/port/runestrcmp.c",
+									"sys/src/libc/port/runestrcpy.c",
+									"sys/src/libc/port/runestrecpy.c",
+									"sys/src/libc/port/runestrdup.c",
+									"sys/src/libc/port/runestrncat.c",
+									"sys/src/libc/port/runestrncmp.c",
+									"sys/src/libc/port/runestrncpy.c",
+									"sys/src/libc/port/runestrrchr.c",
+									"sys/src/libc/port/runestrlen.c",
+									"sys/src/libc/port/runestrstr.c",
+									"sys/src/libc/port/runetype.c",
+									"sys/src/libc/port/sin.c",
+									"sys/src/libc/port/sinh.c",
+									"sys/src/libc/port/sqrt.c",
+									"sys/src/libc/port/strcat.c",
+									"sys/src/libc/port/strchr.c",
+									"sys/src/libc/port/strcmp.c",
+									"sys/src/libc/port/strcpy.c",
+									"sys/src/libc/port/strecpy.c",
+									"sys/src/libc/port/strcspn.c",
+									"sys/src/libc/port/strdup.c",
+									"sys/src/libc/port/strlen.c",
+									"sys/src/libc/port/strncat.c",
+									"sys/src/libc/port/strncmp.c",
+									"sys/src/libc/port/strncpy.c",
+									"sys/src/libc/port/strpbrk.c",
+									"sys/src/libc/port/strrchr.c",
+									"sys/src/libc/port/strspn.c",
+									"sys/src/libc/port/strstr.c",
+									"sys/src/libc/port/strtod.c",
+									"sys/src/libc/port/strtok.c",
+									"sys/src/libc/port/strtol.c",
+									"sys/src/libc/port/strtoll.c",
+									"sys/src/libc/port/strtoul.c",
+									"sys/src/libc/port/strtoull.c",
+									"sys/src/libc/port/tan.c",
+									"sys/src/libc/port/tanh.c",
+									"sys/src/libc/port/tokenize.c",
+									"sys/src/libc/port/toupper.c",
+									"sys/src/libc/port/utfecpy.c",
+									"sys/src/libc/port/utflen.c",
+									"sys/src/libc/port/utfnlen.c",
+									"sys/src/libc/port/utfrune.c",
+									"sys/src/libc/port/utfrrune.c",
+									"sys/src/libc/port/utfutf.c",
+									"sys/src/libc/port/u16.c",
+									"sys/src/libc/port/u32.c",
+									"sys/src/libc/port/u64.c",
+									"sys/src/libc/amd64/seek.c",
+									"sys/src/libc/amd64/notejmp.c",
+									"sys/src/libc/amd64/cycles.c",
+									"sys/src/libc/amd64/argv0.c",
+									"sys/src/libc/amd64/rdpmc.c",
+									"sys/src/libc/amd64/setjmp.s",
+									"sys/src/libc/amd64/sqrt.s",
+									"sys/src/libc/amd64/tas.s",
+									"sys/src/libc/amd64/atom.S",
+									"sys/src/libc/amd64/main9.S"
+								],
+								"Dependencies": [
+									"//sys/src/libc/9syscall:syscallfiles"
+								],
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libc",
+								"Out": null
+							},
+							"Edges": {
+								"libc:syscallfiles": {
+									"Target": {
+										"Name": "syscallfiles",
+										"Mode": "syscallfiles",
+										"ARCH": "amd64",
+										"OutPath": "/Users/sevki/Code/harvey/sys/src/libc/9syscall",
+										"SysConf": "/Users/sevki/Code/harvey/sys/src/sysconf.json",
+										"Dependencies": [
+											"syscallheader"
+										],
+										"Out": null,
+										"Source": "/Users/sevki/Code/harvey/sys/src/libc/9syscall"
+									},
+									"Edges": {
+										"syscallfiles:syscallheader": {
+											"Target": {
+												"Name": "syscallheader",
+												"Mode": "sys.h",
+												"ARCH": "amd64",
+												"OutPath": "/Users/sevki/Code/harvey/sys/src/libc/9syscall/sys.h",
+												"SysConf": "/Users/sevki/Code/harvey/sys/src/sysconf.json",
+												"Dependencies": null,
+												"Out": null,
+												"Source": "/Users/sevki/Code/harvey/sys/src/libc/9syscall"
+											},
+											"Edges": {},
+											"Built": false,
+											"Output": ""
+										}
+									},
+									"Built": false,
+									"Output": ""
+								}
+							},
+							"Built": false,
+							"Output": ""
+						},
+						"libs:libcomplete": {
+							"Target": {
+								"Name": "libcomplete",
+								"Sources": [
+									"sys/src/libcomplete/complete.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libcomplete",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libcontrol": {
+							"Target": {
+								"Name": "libcontrol",
+								"Sources": [
+									"sys/src/libcontrol/box.c",
+									"sys/src/libcontrol/button.c",
+									"sys/src/libcontrol/cache.c",
+									"sys/src/libcontrol/control.c",
+									"sys/src/libcontrol/entry.c",
+									"sys/src/libcontrol/group.c",
+									"sys/src/libcontrol/keyboard.c",
+									"sys/src/libcontrol/label.c",
+									"sys/src/libcontrol/menu.c",
+									"sys/src/libcontrol/radiobutton.c",
+									"sys/src/libcontrol/scribble.c",
+									"sys/src/libcontrol/slider.c",
+									"sys/src/libcontrol/tabs.c",
+									"sys/src/libcontrol/text.c",
+									"sys/src/libcontrol/textbutton.c",
+									"sys/src/libcontrol/textbutton3.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libcontrol",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libdisk": {
+							"Target": {
+								"Name": "libdisk",
+								"Sources": [
+									"sys/src/libdisk/disk.c",
+									"sys/src/libdisk/proto.c",
+									"sys/src/libdisk/scsi.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libdisk",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libdraw": {
+							"Target": {
+								"Name": "libdraw",
+								"Sources": [
+									"sys/src/libdraw/alloc.c",
+									"sys/src/libdraw/allocimagemix.c",
+									"sys/src/libdraw/arith.c",
+									"sys/src/libdraw/bezier.c",
+									"sys/src/libdraw/border.c",
+									"sys/src/libdraw/buildfont.c",
+									"sys/src/libdraw/bytesperline.c",
+									"sys/src/libdraw/chan.c",
+									"sys/src/libdraw/cloadimage.c",
+									"sys/src/libdraw/computil.c",
+									"sys/src/libdraw/creadimage.c",
+									"sys/src/libdraw/debug.c",
+									"sys/src/libdraw/defont.c",
+									"sys/src/libdraw/draw.c",
+									"sys/src/libdraw/drawrepl.c",
+									"sys/src/libdraw/egetrect.c",
+									"sys/src/libdraw/ellipse.c",
+									"sys/src/libdraw/emenuhit.c",
+									"sys/src/libdraw/event.c",
+									"sys/src/libdraw/fmt.c",
+									"sys/src/libdraw/font.c",
+									"sys/src/libdraw/freesubfont.c",
+									"sys/src/libdraw/getdefont.c",
+									"sys/src/libdraw/getrect.c",
+									"sys/src/libdraw/getsubfont.c",
+									"sys/src/libdraw/icossin.c",
+									"sys/src/libdraw/icossin2.c",
+									"sys/src/libdraw/init.c",
+									"sys/src/libdraw/keyboard.c",
+									"sys/src/libdraw/line.c",
+									"sys/src/libdraw/menuhit.c",
+									"sys/src/libdraw/mkfont.c",
+									"sys/src/libdraw/mouse.c",
+									"sys/src/libdraw/newwindow.c",
+									"sys/src/libdraw/openfont.c",
+									"sys/src/libdraw/poly.c",
+									"sys/src/libdraw/loadimage.c",
+									"sys/src/libdraw/readcolmap.c",
+									"sys/src/libdraw/readimage.c",
+									"sys/src/libdraw/readsubfont.c",
+									"sys/src/libdraw/rectclip.c",
+									"sys/src/libdraw/replclipr.c",
+									"sys/src/libdraw/rgb.c",
+									"sys/src/libdraw/scroll.c",
+									"sys/src/libdraw/string.c",
+									"sys/src/libdraw/stringbg.c",
+									"sys/src/libdraw/stringsubfont.c",
+									"sys/src/libdraw/stringwidth.c",
+									"sys/src/libdraw/subfont.c",
+									"sys/src/libdraw/subfontcache.c",
+									"sys/src/libdraw/subfontname.c",
+									"sys/src/libdraw/unloadimage.c",
+									"sys/src/libdraw/window.c",
+									"sys/src/libdraw/writecolmap.c",
+									"sys/src/libdraw/writeimage.c",
+									"sys/src/libdraw/writesubfont.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libdraw",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libflate": {
+							"Target": {
+								"Name": "libflate",
+								"Sources": [
+									"sys/src/libflate/deflate.c",
+									"sys/src/libflate/deflatezlib.c",
+									"sys/src/libflate/deflateblock.c",
+									"sys/src/libflate/deflatezlibblock.c",
+									"sys/src/libflate/inflate.c",
+									"sys/src/libflate/inflatezlib.c",
+									"sys/src/libflate/inflateblock.c",
+									"sys/src/libflate/inflatezlibblock.c",
+									"sys/src/libflate/flateerr.c",
+									"sys/src/libflate/crc.c",
+									"sys/src/libflate/adler.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libflate",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libframe": {
+							"Target": {
+								"Name": "libframe",
+								"Sources": [
+									"sys/src/libframe/frbox.c",
+									"sys/src/libframe/frdraw.c",
+									"sys/src/libframe/frdelete.c",
+									"sys/src/libframe/frinit.c",
+									"sys/src/libframe/frinsert.c",
+									"sys/src/libframe/frptofchar.c",
+									"sys/src/libframe/frselect.c",
+									"sys/src/libframe/frstr.c",
+									"sys/src/libframe/frutil.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libframe",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libgeometry": {
+							"Target": {
+								"Name": "libgeometry",
+								"Sources": [
+									"sys/src/libgeometry/arith3.c",
+									"sys/src/libgeometry/matrix.c",
+									"sys/src/libgeometry/qball.c",
+									"sys/src/libgeometry/quaternion.c",
+									"sys/src/libgeometry/transform.c",
+									"sys/src/libgeometry/tstack.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libgeometry",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libhtml": {
+							"Target": {
+								"Name": "libhtml",
+								"Sources": [
+									"sys/src/libhtml/build.c",
+									"sys/src/libhtml/lex.c",
+									"sys/src/libhtml/strinttab.c",
+									"sys/src/libhtml/utils.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libhtml",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libhttpd": {
+							"Target": {
+								"Name": "libhttpd",
+								"Sources": [
+									"sys/src/libhttpd/alloc.c",
+									"sys/src/libhttpd/checkcontent.c",
+									"sys/src/libhttpd/date.c",
+									"sys/src/libhttpd/fail.c",
+									"sys/src/libhttpd/gethead.c",
+									"sys/src/libhttpd/hio.c",
+									"sys/src/libhttpd/httpfmt.c",
+									"sys/src/libhttpd/httpunesc.c",
+									"sys/src/libhttpd/lower.c",
+									"sys/src/libhttpd/okheaders.c",
+									"sys/src/libhttpd/parse.c",
+									"sys/src/libhttpd/parsereq.c",
+									"sys/src/libhttpd/query.c",
+									"sys/src/libhttpd/redirected.c",
+									"sys/src/libhttpd/unallowed.c",
+									"sys/src/libhttpd/urlfmt.c",
+									"sys/src/libhttpd/urlunesc.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libhttpd",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libip": {
+							"Target": {
+								"Name": "libip",
+								"Sources": [
+									"sys/src/libip/eipfmt.c",
+									"sys/src/libip/equivip.c",
+									"sys/src/libip/parseip.c",
+									"sys/src/libip/parseether.c",
+									"sys/src/libip/myetheraddr.c",
+									"sys/src/libip/myipaddr.c",
+									"sys/src/libip/classmask.c",
+									"sys/src/libip/bo.c",
+									"sys/src/libip/readipifc.c",
+									"sys/src/libip/ipaux.c",
+									"sys/src/libip/ptclbsum.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libip",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:liblex": {
+							"Target": {
+								"Name": "liblex",
+								"Sources": [
+									"sys/src/liblex/allprint.c",
+									"sys/src/liblex/main.c",
+									"sys/src/liblex/reject.c",
+									"sys/src/liblex/yyless.c",
+									"sys/src/liblex/yywrap.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/liblex",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libmach": {
+							"Target": {
+								"Name": "libmach",
+								"Sources": [
+									"sys/src/libmach/6.c",
+									"sys/src/libmach/6obj.c",
+									"sys/src/libmach/8db.c",
+									"sys/src/libmach/access.c",
+									"sys/src/libmach/executable.c",
+									"sys/src/libmach/machdata.c",
+									"sys/src/libmach/map.c",
+									"sys/src/libmach/obj.c",
+									"sys/src/libmach/setmach.c",
+									"sys/src/libmach/swap.c",
+									"sys/src/libmach/sym.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libmach",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libmemdraw": {
+							"Target": {
+								"Name": "libmemdraw",
+								"Sources": [
+									"sys/src/libmemdraw/alloc.c",
+									"sys/src/libmemdraw/arc.c",
+									"sys/src/libmemdraw/cload.c",
+									"sys/src/libmemdraw/cmap.c",
+									"sys/src/libmemdraw/cread.c",
+									"sys/src/libmemdraw/defont.c",
+									"sys/src/libmemdraw/draw.c",
+									"sys/src/libmemdraw/ellipse.c",
+									"sys/src/libmemdraw/fillpoly.c",
+									"sys/src/libmemdraw/hwdraw.c",
+									"sys/src/libmemdraw/iprint.c",
+									"sys/src/libmemdraw/line.c",
+									"sys/src/libmemdraw/load.c",
+									"sys/src/libmemdraw/openmemsubfont.c",
+									"sys/src/libmemdraw/poly.c",
+									"sys/src/libmemdraw/read.c",
+									"sys/src/libmemdraw/string.c",
+									"sys/src/libmemdraw/subfont.c",
+									"sys/src/libmemdraw/unload.c",
+									"sys/src/libmemdraw/write.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libmemdraw",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libmemlayer": {
+							"Target": {
+								"Name": "libmemlayer",
+								"Sources": [
+									"sys/src/libmemlayer/draw.c",
+									"sys/src/libmemlayer/lalloc.c",
+									"sys/src/libmemlayer/layerop.c",
+									"sys/src/libmemlayer/ldelete.c",
+									"sys/src/libmemlayer/lhide.c",
+									"sys/src/libmemlayer/line.c",
+									"sys/src/libmemlayer/load.c",
+									"sys/src/libmemlayer/lorigin.c",
+									"sys/src/libmemlayer/lsetrefresh.c",
+									"sys/src/libmemlayer/ltofront.c",
+									"sys/src/libmemlayer/ltorear.c",
+									"sys/src/libmemlayer/unload.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libmemlayer",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libmp": {
+							"Target": {
+								"Name": "libmp",
+								"Sources": [
+									"sys/src/libmp/port/betomp.c",
+									"sys/src/libmp/port/crt.c",
+									"sys/src/libmp/port/crttest.c",
+									"sys/src/libmp/port/letomp.c",
+									"sys/src/libmp/port/mpadd.c",
+									"sys/src/libmp/port/mpaux.c",
+									"sys/src/libmp/port/mpcmp.c",
+									"sys/src/libmp/port/mpdigdiv.c",
+									"sys/src/libmp/port/mpdiv.c",
+									"sys/src/libmp/port/mpeuclid.c",
+									"sys/src/libmp/port/mpexp.c",
+									"sys/src/libmp/port/mpextendedgcd.c",
+									"sys/src/libmp/port/mpfactorial.c",
+									"sys/src/libmp/port/mpfmt.c",
+									"sys/src/libmp/port/mpinvert.c",
+									"sys/src/libmp/port/mpleft.c",
+									"sys/src/libmp/port/mpmod.c",
+									"sys/src/libmp/port/mpmul.c",
+									"sys/src/libmp/port/mprand.c",
+									"sys/src/libmp/port/mpright.c",
+									"sys/src/libmp/port/mpsub.c",
+									"sys/src/libmp/port/mptobe.c",
+									"sys/src/libmp/port/mptoi.c",
+									"sys/src/libmp/port/mptole.c",
+									"sys/src/libmp/port/mptoui.c",
+									"sys/src/libmp/port/mptouv.c",
+									"sys/src/libmp/port/mptov.c",
+									"sys/src/libmp/port/mpvecadd.c",
+									"sys/src/libmp/port/mpveccmp.c",
+									"sys/src/libmp/port/mpvecdigmuladd.c",
+									"sys/src/libmp/port/mpvecsub.c",
+									"sys/src/libmp/port/strtomp.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libmp",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libndb": {
+							"Target": {
+								"Name": "libndb",
+								"Sources": [
+									"sys/src/libndb/csgetval.c",
+									"sys/src/libndb/csipinfo.c",
+									"sys/src/libndb/dnsquery.c",
+									"sys/src/libndb/ipattr.c",
+									"sys/src/libndb/ndbaux.c",
+									"sys/src/libndb/ndbcache.c",
+									"sys/src/libndb/ndbcat.c",
+									"sys/src/libndb/ndbconcatenate.c",
+									"sys/src/libndb/ndbdiscard.c",
+									"sys/src/libndb/ndbfree.c",
+									"sys/src/libndb/ndbgetipaddr.c",
+									"sys/src/libndb/ndbgetval.c",
+									"sys/src/libndb/ndbhash.c",
+									"sys/src/libndb/ndbipinfo.c",
+									"sys/src/libndb/ndblookval.c",
+									"sys/src/libndb/ndbopen.c",
+									"sys/src/libndb/ndbparse.c",
+									"sys/src/libndb/ndbreorder.c",
+									"sys/src/libndb/ndbsubstitute.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libndb",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:liboventi": {
+							"Target": {
+								"Name": "liboventi",
+								"Sources": [
+									"sys/src/liboventi/client.c",
+									"sys/src/liboventi/debug.c",
+									"sys/src/liboventi/errfmt.c",
+									"sys/src/liboventi/fatal.c",
+									"sys/src/liboventi/pack.c",
+									"sys/src/liboventi/packet.c",
+									"sys/src/liboventi/parsescore.c",
+									"sys/src/liboventi/readfully.c",
+									"sys/src/liboventi/rpc.c",
+									"sys/src/liboventi/scorefmt.c",
+									"sys/src/liboventi/server.c",
+									"sys/src/liboventi/strdup.c",
+									"sys/src/liboventi/zero.c",
+									"sys/src/liboventi/plan9-io.c",
+									"sys/src/liboventi/plan9-sha1.c",
+									"sys/src/liboventi/plan9-thread.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/liboventi",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libplumb": {
+							"Target": {
+								"Name": "libplumb",
+								"Sources": [
+									"sys/src/libplumb/event.c",
+									"sys/src/libplumb/mesg.c",
+									"sys/src/libplumb/plumbsendtext.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libplumb",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libregexp": {
+							"Target": {
+								"Name": "libregexp",
+								"Sources": [
+									"sys/src/libregexp/regcomp.c",
+									"sys/src/libregexp/regerror.c",
+									"sys/src/libregexp/regexec.c",
+									"sys/src/libregexp/regsub.c",
+									"sys/src/libregexp/regaux.c",
+									"sys/src/libregexp/rregexec.c",
+									"sys/src/libregexp/rregsub.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libregexp",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libsec": {
+							"Target": {
+								"Name": "libsec",
+								"Sources": [
+									"sys/src/libsec/port/aes.c",
+									"sys/src/libsec/port/blowfish.c",
+									"sys/src/libsec/port/crypt.c",
+									"sys/src/libsec/port/decodepem.c",
+									"sys/src/libsec/port/des3CBC.c",
+									"sys/src/libsec/port/des3ECB.c",
+									"sys/src/libsec/port/des.c",
+									"sys/src/libsec/port/desCBC.c",
+									"sys/src/libsec/port/desECB.c",
+									"sys/src/libsec/port/desmodes.c",
+									"sys/src/libsec/port/dsaalloc.c",
+									"sys/src/libsec/port/dsagen.c",
+									"sys/src/libsec/port/dsaprimes.c",
+									"sys/src/libsec/port/dsaprivtopub.c",
+									"sys/src/libsec/port/dsasign.c",
+									"sys/src/libsec/port/dsaverify.c",
+									"sys/src/libsec/port/egalloc.c",
+									"sys/src/libsec/port/egdecrypt.c",
+									"sys/src/libsec/port/egencrypt.c",
+									"sys/src/libsec/port/eggen.c",
+									"sys/src/libsec/port/egprivtopub.c",
+									"sys/src/libsec/port/egsign.c",
+									"sys/src/libsec/port/egverify.c",
+									"sys/src/libsec/port/fastrand.c",
+									"sys/src/libsec/port/genprime.c",
+									"sys/src/libsec/port/genrandom.c",
+									"sys/src/libsec/port/gensafeprime.c",
+									"sys/src/libsec/port/genstrongprime.c",
+									"sys/src/libsec/port/hmac.c",
+									"sys/src/libsec/port/md4.c",
+									"sys/src/libsec/port/md5block.c",
+									"sys/src/libsec/port/md5.c",
+									"sys/src/libsec/port/md5pickle.c",
+									"sys/src/libsec/port/nfastrand.c",
+									"sys/src/libsec/port/prng.c",
+									"sys/src/libsec/port/probably_prime.c",
+									"sys/src/libsec/port/rc4.c",
+									"sys/src/libsec/port/readcert.c",
+									"sys/src/libsec/port/rsaalloc.c",
+									"sys/src/libsec/port/rsadecrypt.c",
+									"sys/src/libsec/port/rsaencrypt.c",
+									"sys/src/libsec/port/rsafill.c",
+									"sys/src/libsec/port/rsagen.c",
+									"sys/src/libsec/port/rsaprivtopub.c",
+									"sys/src/libsec/port/sha1block.c",
+									"sys/src/libsec/port/sha1.c",
+									"sys/src/libsec/port/sha1pickle.c",
+									"sys/src/libsec/port/sha2_128.c",
+									"sys/src/libsec/port/sha2_64.c",
+									"sys/src/libsec/port/sha2block128.c",
+									"sys/src/libsec/port/sha2block64.c",
+									"sys/src/libsec/port/smallprimes.c",
+									"sys/src/libsec/port/smallprimetest.c",
+									"sys/src/libsec/port/thumb.c",
+									"sys/src/libsec/port/tlshand.c",
+									"sys/src/libsec/port/x509.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libsec",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libstdio": {
+							"Target": {
+								"Name": "libstdio",
+								"Sources": [
+									"sys/src/libstdio/_IO_getc.c",
+									"sys/src/libstdio/_IO_putc.c",
+									"sys/src/libstdio/clearerr.c",
+									"sys/src/libstdio/dtoa.c",
+									"sys/src/libstdio/fclose.c",
+									"sys/src/libstdio/fdopen.c",
+									"sys/src/libstdio/feof.c",
+									"sys/src/libstdio/ferror.c",
+									"sys/src/libstdio/fflush.c",
+									"sys/src/libstdio/fgetc.c",
+									"sys/src/libstdio/fgetpos.c",
+									"sys/src/libstdio/fgets.c",
+									"sys/src/libstdio/fileno.c",
+									"sys/src/libstdio/fopen.c",
+									"sys/src/libstdio/fprintf.c",
+									"sys/src/libstdio/fputc.c",
+									"sys/src/libstdio/fputs.c",
+									"sys/src/libstdio/fread.c",
+									"sys/src/libstdio/freopen.c",
+									"sys/src/libstdio/fscanf.c",
+									"sys/src/libstdio/fseek.c",
+									"sys/src/libstdio/fseeko.c",
+									"sys/src/libstdio/fsetpos.c",
+									"sys/src/libstdio/ftell.c",
+									"sys/src/libstdio/ftello.c",
+									"sys/src/libstdio/fwrite.c",
+									"sys/src/libstdio/getc.c",
+									"sys/src/libstdio/gets.c",
+									"sys/src/libstdio/printf.c",
+									"sys/src/libstdio/putc.c",
+									"sys/src/libstdio/puts.c",
+									"sys/src/libstdio/rewind.c",
+									"sys/src/libstdio/scanf.c",
+									"sys/src/libstdio/sclose.c",
+									"sys/src/libstdio/setbuf.c",
+									"sys/src/libstdio/setvbuf.c",
+									"sys/src/libstdio/snprintf.c",
+									"sys/src/libstdio/sopenr.c",
+									"sys/src/libstdio/sopenw.c",
+									"sys/src/libstdio/sprintf.c",
+									"sys/src/libstdio/sscanf.c",
+									"sys/src/libstdio/tmpfile.c",
+									"sys/src/libstdio/tmpnam.c",
+									"sys/src/libstdio/ungetc.c",
+									"sys/src/libstdio/vfprintf.c",
+									"sys/src/libstdio/vfscanf.c",
+									"sys/src/libstdio/vprintf.c",
+									"sys/src/libstdio/vsnprintf.c",
+									"sys/src/libstdio/vsprintf.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libstdio",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libsunrpc": {
+							"Target": {
+								"Name": "libsunrpc",
+								"Sources": [
+									"sys/src/libsunrpc/mount3.c",
+									"sys/src/libsunrpc/nfs3.c",
+									"sys/src/libsunrpc/portmap.c",
+									"sys/src/libsunrpc/authunix.c",
+									"sys/src/libsunrpc/client.c",
+									"sys/src/libsunrpc/emalloc.c",
+									"sys/src/libsunrpc/error.c",
+									"sys/src/libsunrpc/fd.c",
+									"sys/src/libsunrpc/fmt.c",
+									"sys/src/libsunrpc/net.c",
+									"sys/src/libsunrpc/prog.c",
+									"sys/src/libsunrpc/rpc.c",
+									"sys/src/libsunrpc/server.c",
+									"sys/src/libsunrpc/suncall.c",
+									"sys/src/libsunrpc/udp.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libsunrpc",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libthread": {
+							"Target": {
+								"Name": "libthread",
+								"Sources": [
+									"sys/src/libthread/amd64.c",
+									"sys/src/libthread/channel.c",
+									"sys/src/libthread/chanprint.c",
+									"sys/src/libthread/create.c",
+									"sys/src/libthread/debug.c",
+									"sys/src/libthread/dial.c",
+									"sys/src/libthread/exec.c",
+									"sys/src/libthread/exit.c",
+									"sys/src/libthread/id.c",
+									"sys/src/libthread/iocall.c",
+									"sys/src/libthread/ioclose.c",
+									"sys/src/libthread/iodial.c",
+									"sys/src/libthread/ioopen.c",
+									"sys/src/libthread/ioproc.c",
+									"sys/src/libthread/ioread.c",
+									"sys/src/libthread/ioreadn.c",
+									"sys/src/libthread/iosleep.c",
+									"sys/src/libthread/iowrite.c",
+									"sys/src/libthread/kill.c",
+									"sys/src/libthread/lib.c",
+									"sys/src/libthread/main.c",
+									"sys/src/libthread/note.c",
+									"sys/src/libthread/ref.c",
+									"sys/src/libthread/rendez.c",
+									"sys/src/libthread/sched.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libthread",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						},
+						"libs:libventi": {
+							"Target": {
+								"Name": "libventi",
+								"Sources": [
+									"sys/src/libventi/cache.c",
+									"sys/src/libventi/client.c",
+									"sys/src/libventi/conn.c",
+									"sys/src/libventi/dial.c",
+									"sys/src/libventi/debug.c",
+									"sys/src/libventi/dtype.c",
+									"sys/src/libventi/entry.c",
+									"sys/src/libventi/fcall.c",
+									"sys/src/libventi/fcallfmt.c",
+									"sys/src/libventi/file.c",
+									"sys/src/libventi/hangup.c",
+									"sys/src/libventi/log.c",
+									"sys/src/libventi/mem.c",
+									"sys/src/libventi/packet.c",
+									"sys/src/libventi/parsescore.c",
+									"sys/src/libventi/queue.c",
+									"sys/src/libventi/root.c",
+									"sys/src/libventi/rpc.c",
+									"sys/src/libventi/scorefmt.c",
+									"sys/src/libventi/send.c",
+									"sys/src/libventi/server.c",
+									"sys/src/libventi/srvhello.c",
+									"sys/src/libventi/strdup.c",
+									"sys/src/libventi/string.c",
+									"sys/src/libventi/time.c",
+									"sys/src/libventi/version.c",
+									"sys/src/libventi/zero.c",
+									"sys/src/libventi/zeroscore.c"
+								],
+								"Dependencies": null,
+								"Includes": null,
+								"Headers": null,
+								"CompilerFlags": null,
+								"LinkerFlags": null,
+								"Source": "/Users/sevki/Code/harvey/sys/src/libventi",
+								"Out": null
+							},
+							"Edges": {},
+							"Built": true,
+							"Output": ""
+						}
+					},
+					"Built": false,
+					"Output": ""
+				}
+			},
+			"Built": false,
+			"Output": ""
+		}
+	},
+	"Built": false,
+	"Output": ""
+}
