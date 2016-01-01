@@ -90,7 +90,7 @@ for instance take harvey travis build [[https://travis-ci.org/Harvey-OS/harvey/j
 I know this is a cheap shot but you can't really tell what which of the targets are acting up and for what reason from looking at that image even if it were [[why-not-make/harvey-buildLog.png][full sized]], and other more popular projects like  [[why-not-make/go-buildLog.png][go]] and [[why-not-make/docker-buildLog.png][docker]] aren't doing much better either.
 On the other hand if you very clumsily stare at the [[why-not-make/build.html][graph]] below, you'll see that `syscallheader` caused a chain reaction for all the targets that depend on it to fail.
 
-.iframe /why-not-make/build.html 800 880
+.iframe /why-not-make/build.html 800 650
 
 *** Extending
 
