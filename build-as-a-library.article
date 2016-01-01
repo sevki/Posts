@@ -21,7 +21,7 @@ to see how long it has been since I started working on this and it has been a wh
 
 Buids only purpose inlife is to provide you with build semantics and abstractions. That's it. So I call it *Build* *as* *a* *library*. The fact that it was written in go is a implementation detail, it very well could have been written in C, erlang, ruby and sure enough it was actually written in python and java(x2). 
 
-- Making a lightweight, 0 dependency build system so we can use it in plan9, harvey or freebsd run it on arm or powerpc or GCP.
+- Making a lightweight, 0 dependency build system so we can use it in plan9, harvey or freebsd run it on arm or powerpc or kubernetes.
 - MapReduce'd distributed compilations and tests
 - Better [[why-not-make/build.html][output]]
 
@@ -72,7 +72,7 @@ so given the situation
 
 if 'e' is invalidated, all of it's parents will also be invalidated. 
 
-however it's not all roses, ATM build doesn't hash std libraries or system headers, which is not a problem for harvey since it doesn't use any of the std stuff, but that is just an implementation glitch that can easily be fixed by hashing those too. For instance when we first run build, cc library hashes the version of the $CC, that sort of technique can also be used to hash the std includes and libs. 
+however it's not all roses, ATM build doesn't hash std libraries or system headers, which is not a problem for harvey since it doesn't use any of the std stuff, but that is just an implementation glitch that can easily be fixed by hashing those too. For instance when we first run build, cc library hashes the version of the `$CC`, that sort of technique can also be used to hash the std includes and libs. 
 
 so anything that requires a clean build is something build failed to include in its hash fucntion. I am also playing around with `libclang` that will abosulutely make sure that C/C++ stuff are properly hashed, using the actual hash function to produce the hash, as opposed to guessing it's validity but that's not a priority and it intoroduces a big dependency. That may just be for the server vesion.
 

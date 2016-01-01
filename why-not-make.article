@@ -6,7 +6,7 @@ Sevki
 @Sevki
 
 * Build
-This is about a my evaluation of build systems for like bazel, buck and pants which I think could improve the current build system harvey `build.go`.
+This is about a my evaluation of build systems for like bazel, buck and pants which I think could improve the current build system harvey `build.go`. 
 
 ** Package manager
 
@@ -19,20 +19,18 @@ that thread, but I'll try anyways, something Aki
 [[https://groups.google.com/d/msg/harvey/IwK8-gebgyw/vxCPQVaGBAAJ][said]]
 really struct a chord
 
-"Today, Go is the build system for Harvey, with some stuff pushed to json for convenience. For all I care, build.go should be seen as malleable as the json it reads is. Or maybe the json should be viewed as struct literals split out from build.go. Either way, I prefer to think of go as the single fully general underlying system, with build.go being the equivalent of a Makefile."
+.blockquote Today, Go is the build system for Harvey, with some stuff pushed to json for convenience. For all I care, build.go should be seen as malleable as the json it reads is. Or maybe the json should be viewed as struct literals split out from build.go. Either way, I prefer to think of go as the single fully general underlying system, with build.go being the equivalent of a Makefile.
 
 and with that, and what ron had
 [[https://groups.google.com/d/msg/harvey/IwK8-gebgyw/7oYE3FdgBAAJ][said]]
 
-"Build is fast and can be faster
+.blockquote Build is fast and can be faster also, build can let us do some interesting things not yet done. For example, we could gather all the .c files for the kernel into one file, compile that, and see if we get benefit from whole program optimization. Easy to write this in Go, hard to do in shell scripts (I've tried) since we want to correctly order the inclusion of files.
 
 (Indeed, on my lenovo x201, when I time a build I get
 
    106.39s user 19.74s system 92% cpu 2:15.88 total
 
 so there is still room for improvement, infact that was my main motivation for doing this.)
-
-Also, build can let us do some interesting things not yet done. For example, we could gather all the .c files for the kernel into one file, compile that, and see if we get benefit from whole program optimization. Easy to write this in Go, hard to do in shell scripts (I've tried) since we want to correctly order the inclusion of files."
 
 ** {Java, Java} - Choose two
 
@@ -45,13 +43,13 @@ is no `brew install` for buck or bazel there is a `AUR` package for bazel but th
 As Álvaro
 [[https://groups.google.com/d/msg/harvey/IwK8-gebgyw/pnjFaaptBAAJ][said]],
 
-"Before build.go we thought in other methods. One of them recent opensourced by Google, but it requieres java. Java is very expensive for now if we want build harvey from harvey before Christmas."
+.blockquote Before build.go we thought in other methods. One of them recent opensourced by Google, but it requieres java. Java is very expensive for now if we want build harvey from harvey before Christmas.
 
 I also wanted to be able to make this extensible
 
 as the section [[https://buckbuild.com/extending/rules.html][Adding Custom Rules to Buck]] states
 
-"As of the writing of this document, the only official way to add rules to Buck is to fork the project and modify the source. We  will, at some point, construct a beautiful and elegant extensions API. Until then...."
+.blockquote As of the writing of this document, the only official way to add rules to Buck is to fork the project and modify the source. We  will, at some point, construct a beautiful and elegant extensions API. Until then....
 
 meanwhile bazel atleast has an extension mechanism called skylark but
 the main code is still java so who cares. Ok I shouldn't probably give so
@@ -92,7 +90,7 @@ for instance take harvey travis build [[https://travis-ci.org/Harvey-OS/harvey/j
 I know this is a cheap shot but you can't really tell what which of the targets are acting up and for what reason from looking at that image even if it were [[why-not-make/harvey-buildLog.png][full sized]], and other more popular projects like  [[why-not-make/go-buildLog.png][go]] and [[why-not-make/docker-buildLog.png][docker]] aren't doing much better either.
 On the other hand if you very clumsily stare at the [[why-not-make/build.html][graph]] below, you'll see that `syscallheader` caused a chain reaction for all the targets that depend on it to fail.
 
-.iframe /why-not-make/build.html 800 650
+.iframe /why-not-make/build.html 800 880
 
 *** Extending
 
