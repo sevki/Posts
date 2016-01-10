@@ -13,8 +13,7 @@ Build targets are;
 
 - Concurrent
 - Declerative
-
-Targets are that are nodes on a directed acyclic graph.
+- nodes on a directed acyclic graph (no import cycles, 1-way communication)
 
 ** So what does this mean for build targets?
 Every target you create must exist in a vacuum; which means that your target may only make assumptions about what is in its vacuum, and nothing more. If it's not there, it doesn't exist.
