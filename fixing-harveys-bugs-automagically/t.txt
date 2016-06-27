@@ -1,0 +1,5 @@
+main.c:153:6: warning: use of GNU 'missing =' extension in designator
+      [-Wgnu-designator]
+[16]    "r5g6b5",
+        ^
+        = 

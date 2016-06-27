@@ -1,0 +1,23 @@
+Fixing Harvey's bugs Automagically
+27 Jun 2016
+Tags: bazel, buck, pants, build, harvey
+
+Sevki
+@Sevki
+
+* Fixing Harvey's bugs
+How we fix harvey's bugs automagically
+
+.html fixing-harveys-bugs-automagically/vid.html
+
+** How it works
+
+Both gcc and clang, but more notoriously clang come with very useful diagnostic messages 
+
+.code fixing-harveys-bugs-automagically/t.txt
+
+but clang also exposes these diagnostic messages to the programmes via [[http://clang.llvm.org/docs/Tooling.html#libclang][libclang]]. As I wrote in a previous post, the most important thing I wanted to do with build was not just building stuff but was rather creating a library that can be used from a cli too. Infact build was insipred by that libclang philosophy.
+
+Clang exposes the information needed to fix the source code in form of FixIt messages, this requires the compiler flags and the actual files too but since build exposes that information we can programatically fix the files that need fixing.
+
+You can view the code [[https://github.com/sevki/build/blob/master/cmd/build-fix/clang.go][here]].
